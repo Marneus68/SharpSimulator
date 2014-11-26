@@ -24,7 +24,7 @@ namespace SharpSimulator {
 		protected Faction faction;
 		protected Faction.StatusEnum status = Faction.StatusEnum.INDIFERENCE;
 
-		public AEntity (string fname = "Random", string lname = "Peon", string nick = "") {
+		public AEntity (Faction _faction = null, string fname = "Random", string lname = "Peon", string nick = "") {
 			FirstName			= fname;
 			LastName			= lname;
 			Nickname 			= nick;
@@ -34,12 +34,20 @@ namespace SharpSimulator {
 			TauntBehaviour		= null;
 			DisplayBehaviour	= null;
 
-			STR = 0;
-			INT = 0;
-			DEX = 0;
-			DEF = 0;
-			CHA = 0;
-			PER = 0;
+			StructurePoints = 6;
+
+			STR = 50;
+			INT = 50;
+			DEX = 50;
+			DEF = 50;
+			CHA = 50;
+			PER = 50;
+
+			faction = _faction;
+
+			if (_faction != null) {
+				_faction.Attach (this);
+			}
 		}
 
 		public void Fight () {
@@ -80,8 +88,7 @@ namespace SharpSimulator {
 				ret = FirstName + " " + LastName;
 
 			ret = ret + " (Strenght:" + STR + " Intelligence:" + INT + " Dexterity:" + DEX +
-			" Defense:" + DEF + " Charisma:" + CHA + " Perception:" + PER + ")";
-
+				" Defense:" + DEF + " Charisma:" + CHA + " Perception:" + PER + ") Structure Points:" + StructurePoints;
 			return ret;
 		}
 	}

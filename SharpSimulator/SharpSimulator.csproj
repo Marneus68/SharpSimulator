@@ -75,6 +75,7 @@
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyMoveBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTauntBehaviour.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\AEntity.cs" />
+    <Compile Include="Simulator\Entities\EntityManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
