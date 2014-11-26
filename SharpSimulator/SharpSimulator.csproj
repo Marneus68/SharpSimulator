@@ -68,14 +68,14 @@
     <Compile Include="Simulator\Behaviours\Interfaces\IMoveBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\Interfaces\IFightBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\Interfaces\ITauntBehaviour.cs" />
-    <Compile Include="Simulator\Faction\Faction.cs" />
-    <Compile Include="Simulator\Faction\Interfaces\IFactionMember.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyDisplayBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyFightBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyMoveBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTauntBehaviour.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\AEntity.cs" />
     <Compile Include="Simulator\Entities\EntityManager.cs" />
+    <Compile Include="Simulator\Factions\Faction.cs" />
+    <Compile Include="Simulator\Factions\Interfaces\IFactionMember.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -83,10 +83,10 @@
     <Folder Include="Simulator\Entities\" />
     <Folder Include="Simulator\Behaviours\" />
     <Folder Include="Simulator\Behaviours\Interfaces\" />
-    <Folder Include="Simulator\Faction\" />
-    <Folder Include="Simulator\Faction\Interfaces\" />
     <Folder Include="Simulator\Entities\EntityDefinition\" />
     <Folder Include="Simulator\Entities\EntityDefinition\Characteristics\" />
     <Folder Include="Simulator\Entities\EntityDefinition\Skill\" />
+    <Folder Include="Simulator\Factions\" />
+    <Folder Include="Simulator\Factions\Interfaces\" />
   </ItemGroup>
 </Project>
