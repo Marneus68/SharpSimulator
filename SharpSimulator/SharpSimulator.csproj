@@ -50,6 +50,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Mono.Posix" />
+    <Reference Include="nunit.framework" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -76,6 +77,14 @@
     <Compile Include="Simulator\Entities\EntityManager.cs" />
     <Compile Include="Simulator\Factions\Faction.cs" />
     <Compile Include="Simulator\Factions\Interfaces\IFactionMember.cs" />
+    <Compile Include="Test\CharacteristicsTest.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Strength.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Intelligence.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Dexterity.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Defense.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Charisma.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Perception.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Characteristic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -88,5 +97,6 @@
     <Folder Include="Simulator\Entities\EntityDefinition\Skill\" />
     <Folder Include="Simulator\Factions\" />
     <Folder Include="Simulator\Factions\Interfaces\" />
+    <Folder Include="Test\" />
   </ItemGroup>
 </Project>

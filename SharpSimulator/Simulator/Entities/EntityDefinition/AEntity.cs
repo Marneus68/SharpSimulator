@@ -14,12 +14,12 @@ namespace SharpSimulator {
 
 		public uint 	StructurePoints {get; protected set;}
 
-		public uint		STR {get; protected set;} // Strength
-		public uint		INT {get; protected set;} // Intelligence
-		public uint		DEX {get; protected set;} // Dexterity
-		public uint		DEF {get; protected set;} // Defense
-		public uint		CHA {get; protected set;} // Charisma
-		public uint		PER {get; protected set;} // Perception
+		public Strength		STR {get; protected set;} // Strength
+		public Intelligence	INT {get; protected set;} // Intelligence
+		public Dexterity	DEX {get; protected set;} // Dexterity
+		public Defense		DEF {get; protected set;} // Defense
+		public Charisma		CHA {get; protected set;} // Charisma
+		public Perception	PER {get; protected set;} // Perception
 
 		protected Faction faction;
 		protected Faction.StatusEnum status = Faction.StatusEnum.INDIFERENCE;
