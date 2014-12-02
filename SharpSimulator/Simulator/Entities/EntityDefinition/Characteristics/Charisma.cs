@@ -15,4 +15,3 @@ namespace SharpSimulator
 		public static implicit operator Charisma(uint i) { return new Charisma (i); }
 	}
 }
-

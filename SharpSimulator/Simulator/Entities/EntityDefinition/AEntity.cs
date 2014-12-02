@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SharpSimulator {
 	public abstract class AEntity : IFactionMember {
@@ -21,10 +22,14 @@ namespace SharpSimulator {
 		public Charisma		CHA {get; protected set;} // Charisma
 		public Perception	PER {get; protected set;} // Perception
 
-		protected Faction faction;
-		protected Faction.StatusEnum status = Faction.StatusEnum.INDIFERENCE;
+		protected Faction faction = null;
+		public Faction Faction { 
+			get { return faction; } 
+			set{ faction = value; Update (); }
+		}
+		public Dictionary<string, Faction.Relation> Relationships;
 
-		public AEntity (Faction _faction = null, string fname = "Random", string lname = "Peon", string nick = "") {
+		public AEntity (Faction faction = null, string fname = "Random", string lname = "Peon", string nick = "") {
 			FirstName			= fname;
 			LastName			= lname;
 			Nickname 			= nick;
@@ -43,10 +48,10 @@ namespace SharpSimulator {
 			CHA = 50;
 			PER = 50;
 
-			faction = _faction;
-
-			if (_faction != null) {
-				_faction.Attach (this);
+			if (faction != null) {
+				Faction = faction;
+				Faction.Attach (this);
+				Relationships = Faction.Relationships;
 			}
 		}
 
@@ -75,9 +80,32 @@ namespace SharpSimulator {
 		}
 
 		public void Update () {
-			status = faction.Status;
-			Taunt ();
-			Console.WriteLine("Current status:" + status.ToString().ToLower() + "\nCurrent faction: " + faction.Name);
+			if (Faction != null)
+				Relationships = Faction.Relationships;
+			/*
+			List<string> war = new List<string> ();
+			List<string> peace = new List<string> ();
+			List<string> distrust = new List<string> ();
+			List<string> appreciation = new List<string> ();
+			//List<string> ignorance = 
+
+			foreach (var kp in Relationships) {
+				if (kp.Key.Equals( Faction.Relation.WAR )) {
+					war.Add (kp.Key);
+				} else if (kp.Key.Equals( Faction.Relation.PEACE)) {
+					peace.Add (kp.Key);
+				} else if (kp.Key.Equals( Faction.Relation.APPRECIATION)) {
+					appreciation.Add (kp.Key);
+				} else if (kp.Key.Equals( Faction.Relation.SUSPICION)) {
+					distrust.Add (kp.Key);
+				}
+			}
+
+			Console.WriteLine ("We are at war with {0}", TextUtils.StringListToString(war));
+			Console.WriteLine ("We are in peace with {0}", TextUtils.StringListToString(peace));
+			Console.WriteLine ("We shouldn't trust {0}", TextUtils.StringListToString(distrust));
+			Console.WriteLine ("{0}", TextUtils.StringListToString(appreciation));
+			*/
 		}
 
 		override public string ToString() {
@@ -93,4 +121,3 @@ namespace SharpSimulator {
 		}
 	}
 }
-

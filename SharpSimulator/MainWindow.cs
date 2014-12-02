@@ -62,13 +62,13 @@ public partial class MainWindow: Gtk.Window
 	}
 
 	static void state_of_war(object obj, EventArgs args) {
-		faction.Status = SharpSimulator.Faction.StatusEnum.WAR;
-		faction.Update ();
+		//faction.Relation = SharpSimulator.Faction.Relation.WAR;
+		//faction.Update ();
 	}
 
 	static void state_of_peace(object obj, EventArgs args) {
-		faction.Status = SharpSimulator.Faction.StatusEnum.PEACE;
-		faction.Update ();
+		//faction.Relation = SharpSimulator.Faction.Relation.PEACE;
+		//faction.Update ();
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a) {
