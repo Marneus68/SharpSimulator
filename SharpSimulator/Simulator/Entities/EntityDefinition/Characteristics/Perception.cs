@@ -4,13 +4,13 @@ namespace SharpSimulator
 {
 	public class Perception : Characteristic
 	{
-		private void init() {
+		static Perception() {
 			Name = "Perception";
 			Description = "xxx";
 		}
 
-		public Perception () : base() {init();}
-		public Perception (System.Object obj = null) : base (obj) {init();}
+		public Perception () : base() {}
+		public Perception (System.Object obj = null) : base (obj) {}
 
 		public static string Name { get; set; }
 		public static string Description { get; set; }

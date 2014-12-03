@@ -4,13 +4,14 @@ namespace SharpSimulator
 {
 	public class Charisma : Characteristic
 	{
-		private void init() {
+		static Charisma() {
 			Name = "Charisma";
 			Description = "xxx";
 		}
 
-		public Charisma () : base() {init();}
-		public Charisma (System.Object obj = null) : base (obj) {init();}
+		public Charisma () : base() {
+		}
+		public Charisma (System.Object obj = null) : base (obj) {}
 
 		public static string Name { get; set; }
 		public static string Description { get; set; }

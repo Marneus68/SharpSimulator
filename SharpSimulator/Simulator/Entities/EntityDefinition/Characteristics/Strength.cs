@@ -4,13 +4,13 @@ namespace SharpSimulator
 {
 	public class Strength : Characteristic
 	{
-		private void init() {
+		static Strength() {
 			Name = "Strength";
 			Description = "xxx";
 		}
 
-		public Strength () : base() {init();}
-		public Strength (System.Object obj = null) : base (obj) {init();}
+		public Strength () : base() {}
+		public Strength (System.Object obj = null) : base (obj) {}
 
 		public static string Name { get; set; }
 		public static string Description { get; set; }

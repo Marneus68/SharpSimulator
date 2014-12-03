@@ -4,13 +4,13 @@ namespace SharpSimulator
 {
 	public class Defense : Characteristic
 	{
-		private void init() {
+		static Defense() {
 			Name = "Defense";
 			Description = "xxx";
 		}
 
-		public Defense () : base() {init();}
-		public Defense (System.Object obj = null) : base (obj) {init();}
+		public Defense () : base() {}
+		public Defense (System.Object obj = null) : base (obj) {}
 
 		public static string Name { get; set; }
 		public static string Description { get; set; }

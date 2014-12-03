@@ -4,13 +4,13 @@ namespace SharpSimulator
 {
 	public class Dexterity : Characteristic
 	{
-		private void init() {
+		static Dexterity() {
 			Name = "Dexterity";
 			Description = "xxx";
 		}
 
-		public Dexterity () : base() {init();}
-		public Dexterity (System.Object obj = null) : base (obj) {init();}
+		public Dexterity () : base() {}
+		public Dexterity (System.Object obj = null) : base (obj) {}
 
 		public static string Name { get; set; }
 		public static string Description { get; set; }
