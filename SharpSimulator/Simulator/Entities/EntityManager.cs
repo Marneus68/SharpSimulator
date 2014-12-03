@@ -20,9 +20,9 @@ namespace SharpSimulator
 			}
 		}
 
-		public void Taunt() {
+		public void Talk() {
 			foreach (var entry in entities) {
-				entry.Taunt ();
+				TextUtils.OptionalPrint (entry.Talk ());
 			}
 		}
 
