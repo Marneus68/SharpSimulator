@@ -12,6 +12,11 @@ namespace SharpSimulator
 			}
 			return ret;
 		}
+
+		public static void OptionalPrint(string str) {
+			if (str == "")
+				System.Console.WriteLine (str);
+		}
 	}
 }
 

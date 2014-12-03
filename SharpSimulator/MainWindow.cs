@@ -17,7 +17,7 @@ public partial class MainWindow: Gtk.Window
 		Button state_war = new Button ("State of war !");
 		Button state_peace = new Button ("State of peace !");
 		Button mv_btn = new Button("Move !");
-		Button taunt_btn = new Button("Taunt !");
+		Button talk_btn = new Button("Taunt !");
 		Button fight_btn = new Button("Fight !");
 
 		add_civ_btn.Clicked += new EventHandler (add_civilian);
@@ -25,7 +25,7 @@ public partial class MainWindow: Gtk.Window
 		state_war.Clicked += new EventHandler (state_of_war);
 		state_peace.Clicked += new EventHandler (state_of_peace);
 		mv_btn.Clicked += new EventHandler (move_entities);
-		taunt_btn.Clicked += new EventHandler (taunt_entities);
+		talk_btn.Clicked += new EventHandler (taunt_entities);
 		fight_btn.Clicked += new EventHandler (fight_entities);
 
 		box.Add (add_civ_btn);
@@ -33,7 +33,7 @@ public partial class MainWindow: Gtk.Window
 		box.Add (state_war);
 		box.Add (state_peace);
 		box.Add (mv_btn);
-		box.Add (taunt_btn);	
+		box.Add (talk_btn);	
 		box.Add (fight_btn);
 
 		this.Add (box);
@@ -54,7 +54,7 @@ public partial class MainWindow: Gtk.Window
 	}
 
 	static void taunt_entities(object obj, EventArgs args) {
-		manager.Taunt ();
+		manager.Talk ();
 	}
 
 	static void fight_entities(object obj, EventArgs args) {

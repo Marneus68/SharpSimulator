@@ -4,12 +4,16 @@ namespace SharpSimulator
 {
 	public class Intelligence : Characteristic
 	{
-		public Intelligence () : base() {}
-		public Intelligence (System.Object obj = null) : base (obj) {}
+		private void init() {
+			Name = "Intelligence";
+			Description = "xxx";
+		}
 
-		public static string Name { get; set; } = "Intelligence";
+		public Intelligence () : base() {init();}
+		public Intelligence (System.Object obj = null) : base (obj) {init();}
 
-		public static string Description { get; set; } = "xxx";
+		public static string Name { get; set; }
+		public static string Description { get; set; }
 
 		public static implicit operator Intelligence(int i) { return new Intelligence (i); }
 		public static implicit operator Intelligence(uint i) { return new Intelligence (i); }

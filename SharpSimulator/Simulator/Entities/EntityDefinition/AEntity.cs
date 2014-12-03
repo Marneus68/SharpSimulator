@@ -5,7 +5,7 @@ namespace SharpSimulator {
 	public abstract class AEntity : IFactionMember {
 		public IFightBehaviour		FightBehaviour {get; set;}
 		public IMoveBehaviour		MoveBehaviour {get; set;}
-		public ITauntBehaviour		TauntBehaviour {get; set;}
+		public ITalkBehaviour		TalkBehaviour {get; set;}
 		public IDisplayBehaviour	DisplayBehaviour {get; set;}
 
 		public string 	FirstName {get; protected set;}
@@ -36,7 +36,7 @@ namespace SharpSimulator {
 
 			FightBehaviour		= null;
 			MoveBehaviour		= null;
-			TauntBehaviour		= null;
+			TalkBehaviour		= null;
 			DisplayBehaviour	= null;
 
 			StructurePoints = 6;
@@ -67,10 +67,11 @@ namespace SharpSimulator {
 			}
 		}
 
-		public void Taunt () {
-			if (TauntBehaviour != null) {
-				TauntBehaviour.Taunt (this);
+		public string Talk () {
+			if (TalkBehaviour != null) {
+				return TalkBehaviour.Talk (this);
 			}
+			return "";
 		}
 
 		public void Display () {

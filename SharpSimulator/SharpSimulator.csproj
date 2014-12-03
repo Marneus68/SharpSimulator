@@ -68,11 +68,9 @@
     <Compile Include="Simulator\Behaviours\Interfaces\IDisplayBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\Interfaces\IMoveBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\Interfaces\IFightBehaviour.cs" />
-    <Compile Include="Simulator\Behaviours\Interfaces\ITauntBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyDisplayBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyFightBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyMoveBehaviour.cs" />
-    <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTauntBehaviour.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\AEntity.cs" />
     <Compile Include="Simulator\Entities\EntityManager.cs" />
     <Compile Include="Simulator\Factions\Faction.cs" />
@@ -87,6 +85,9 @@
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Characteristic.cs" />
     <Compile Include="Test\FactionTest.cs" />
     <Compile Include="Utils\TextUtils.cs" />
+    <Compile Include="Simulator\Behaviours\Interfaces\ITalkBehaviour.cs" />
+    <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTalkBehaviour.cs" />
+    <Compile Include="Test\TalkBehaviourTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
