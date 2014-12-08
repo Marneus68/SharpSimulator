@@ -7,10 +7,30 @@ public partial class MainWindow: Gtk.Window
 	private static SharpSimulator.Faction faction;  
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel) {
+
+		SetDefaultSize(800, 600);
+
 		manager = new SharpSimulator.EntityManager ();
 		faction = new SharpSimulator.Faction ("Faction");
 
-		VBox box = new VBox(false, 0);
+		HBox box = new HBox(false, 0);
+
+		VPaned p = new VPaned();
+
+		Notebook nb = new Notebook();
+		HBox debug_log = new HBox();
+		Label debug_log_label = new Label("Debug Log");
+		HBox entity_log = new HBox();
+		Label entity_log_label = new Label("Entity Log");
+
+
+		Gdk.Size sh = new Gdk.Size();
+		sh.Height = 100;
+		debug_log.SizeAllocate(new Gdk.Rectangle(Gdk.Point.Zero, sh));
+
+
+		nb.AppendPage(debug_log, debug_log_label);
+		nb.AppendPage(entity_log, entity_log_label);
 
 		Button add_civ_btn = new Button("Add a Civilian");
 		Button add_fig_btn = new Button("Add a Fighter");
@@ -36,7 +56,12 @@ public partial class MainWindow: Gtk.Window
 		box.Add (talk_btn);	
 		box.Add (fight_btn);
 
-		this.Add (box);
+		//this.Add (box);
+
+		p.Pack1(box, true, false);
+		p.Pack2(nb, true, true);
+
+		this.Add(p);
 
 		ShowAll ();
 	}
