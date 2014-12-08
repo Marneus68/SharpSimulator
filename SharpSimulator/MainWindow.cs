@@ -23,11 +23,11 @@ public partial class MainWindow: Gtk.Window
 		HBox entity_log = new HBox();
 		Label entity_log_label = new Label("Entity Log");
 
+		debug_log.PackStart (SharpSimulator.GuiLogger.OutputWidget);
 
 		Gdk.Size sh = new Gdk.Size();
 		sh.Height = 100;
 		debug_log.SizeAllocate(new Gdk.Rectangle(Gdk.Point.Zero, sh));
-
 
 		nb.AppendPage(debug_log, debug_log_label);
 		nb.AppendPage(entity_log, entity_log_label);
@@ -94,6 +94,8 @@ public partial class MainWindow: Gtk.Window
 	static void state_of_peace(object obj, EventArgs args) {
 		//faction.Relation = SharpSimulator.Faction.Relation.PEACE;
 		//faction.Update ();
+
+		SharpSimulator.Logger.LogChain.Message ("Hey", SharpSimulator.Logger.Level.ERROR);
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a) {

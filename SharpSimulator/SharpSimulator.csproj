@@ -50,7 +50,9 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Mono.Posix" />
-    <Reference Include="nunit.framework" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -87,6 +89,7 @@
     <Compile Include="Simulator\Behaviours\Interfaces\ITalkBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTalkBehaviour.cs" />
     <Compile Include="Test\TalkBehaviourTest.cs" />
+    <Compile Include="Logger\Logger.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -102,5 +105,8 @@
     <Folder Include="Test\" />
     <Folder Include="Utils\" />
     <Folder Include="Logger\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
