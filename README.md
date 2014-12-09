@@ -2,12 +2,17 @@
 
 ## Builing
 
+You can build the solution using Xamarin Studio, MonoDevelop or Visual Studio.
+
+Or, from the command line from inside the SharpSimulator directory:
+
 	xbuild
 
 or
 
-
 	msbuild
+
+depending on if you have the appropriated command line tools in your path.
 
 ### Build dependencies 
 
