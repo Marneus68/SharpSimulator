@@ -27,3 +27,7 @@ UpgradeLog.*
 
 # dotCover
 *.dotCover
+
+# NuGet
+packages/
+*.nupkg

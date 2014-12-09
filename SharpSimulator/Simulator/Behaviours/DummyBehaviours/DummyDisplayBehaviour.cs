@@ -4,7 +4,7 @@ namespace SharpSimulator
 {
 	public class DummyDisplayBehaviour : IDisplayBehaviour {
 		public void Display() {
-			Console.WriteLine("[Dummy display behaviour called]");
+			Logger.LogChain.Message("[Dummy display behaviour called]", Logger.Level.SIMULATION_DEBUG);
 		}
 	}
 }
