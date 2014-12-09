@@ -2,11 +2,12 @@
 
 ## Builing
 
-	$ xbuild
+	xbuild
 
 or
 
-	$ msbuild
+
+	msbuild
 
 ### Build dependencies 
 
@@ -31,7 +32,7 @@ Alternativelly, install [Xamarin Studio](http://xamarin.com/download) and everyt
 
 * With macports
 
-	# port install gtk-sharp
+	sudo port install gtk-sharp
 
 * Without macports
 
