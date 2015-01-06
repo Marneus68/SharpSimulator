@@ -90,6 +90,13 @@
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTalkBehaviour.cs" />
     <Compile Include="Test\TalkBehaviourTest.cs" />
     <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Simulator\Command\Command.cs" />
+    <Compile Include="Simulator\Command\CommandBack.cs" />
+    <Compile Include="Simulator\Command\CommandMove.cs" />
+    <Compile Include="Simulator\Command\AbstractCommand.cs" />
+    <Compile Include="Simulator\Command\Receiver.cs" />
+    <Compile Include="Simulator\Command\CommandWithAnnulation.cs" />
+    <Compile Include="Simulator\Command\CommandNull.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -105,6 +112,7 @@
     <Folder Include="Test\" />
     <Folder Include="Utils\" />
     <Folder Include="Logger\" />
+    <Folder Include="Simulator\Command\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
