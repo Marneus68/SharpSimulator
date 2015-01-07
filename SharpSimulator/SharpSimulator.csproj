@@ -97,6 +97,12 @@
     <Compile Include="Simulator\Command\Receiver.cs" />
     <Compile Include="Simulator\Command\CommandWithAnnulation.cs" />
     <Compile Include="Simulator\Command\CommandNull.cs" />
+    <Compile Include="Simulator\State\State\PlayState.cs" />
+    <Compile Include="Simulator\State\State\CreateNewEntitySate.cs" />
+    <Compile Include="Simulator\State\State\IdleState.cs" />
+    <Compile Include="Simulator\State\State\NoMapLoadedState.cs" />
+    <Compile Include="Simulator\State\StateMachine.cs" />
+    <Compile Include="Simulator\State\State\AbstractState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -113,6 +119,8 @@
     <Folder Include="Utils\" />
     <Folder Include="Logger\" />
     <Folder Include="Simulator\Command\" />
+    <Folder Include="Simulator\State\" />
+    <Folder Include="Simulator\State\State\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
