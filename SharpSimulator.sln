@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSimulator", "SharpSimulator\SharpSimulator.csproj", "{9E62229A-DF0A-4094-BC0B-795B5A707968}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{621FEADD-0102-4B76-805C-EA118C6BA459}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +18,9 @@ Global
 		{9E62229A-DF0A-4094-BC0B-795B5A707968}.Debug|x86.Build.0 = Debug|x86
 		{9E62229A-DF0A-4094-BC0B-795B5A707968}.Release|x86.ActiveCfg = Release|x86
 		{9E62229A-DF0A-4094-BC0B-795B5A707968}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = SharpSimulator\SharpSimulator.csproj
