@@ -22,6 +22,10 @@ To build the project, you may need to redownload the NUnit NuGet packages
 
 - NUnit
 - NUnit Runner
+- Json.net
+
+Bug linked to using dynamic (c# keyword)
+Make sure you are using .net v4+ (add reference Microsoft.Csharp v4+)
 
 #### Gtk#
 
@@ -77,3 +81,6 @@ Possible Levels of include :
 * ALL
 
 Direct use of System.ConsoleWriteLine and similar methods is **discouraged**.
+
+
+
