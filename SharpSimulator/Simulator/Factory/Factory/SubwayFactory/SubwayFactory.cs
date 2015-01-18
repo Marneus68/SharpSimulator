@@ -19,7 +19,7 @@ namespace SharpSimulator.Factory
         public SubwayFactory() {
 
             FileInfo fileInfo = new FileInfo(Directory.GetCurrentDirectory());
-            jsonPath = fileInfo.FullName + @"\..\..\Factory\res\subwayFile.txt";
+            jsonPath = fileInfo.FullName + @"\..\..\Resources\subway.json";
             try
             {
             mapFile = JObject.Parse(File.ReadAllText(jsonPath));
@@ -58,7 +58,7 @@ namespace SharpSimulator.Factory
 
             for (int i = 0; i < mapSize; i++)
             {
-                var tmpTexture = mapFile.Map.frames[i];
+                var tmpTexture = mapFile.Map.textures[i];
                 textures[tmpTexture.x, tmpTexture.y] = tmpTexture.value ;
             }
             return textures;

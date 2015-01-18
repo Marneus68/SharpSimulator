@@ -19,12 +19,12 @@ namespace SharpSimulator.Map
         public override AbstractMap generateMap(){
             AddArea();
             AddAccess();
+            AddTexture();
             return this;
         }
 
         internal override void AddAccess()
         {
-            Console.WriteLine("add access");
             accessList = mapFactory.GenerateAccess();
         }
 

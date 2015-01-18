@@ -62,9 +62,9 @@
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Subway.txt">
+    <None Include="Resources\Subway.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
@@ -92,6 +92,7 @@
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Perception.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Characteristic.cs" />
     <Compile Include="Test\FactionTest.cs" />
+    <Compile Include="Test\FactoryTest.cs" />
     <Compile Include="Utils\TextUtils.cs" />
     <Compile Include="Simulator\Behaviours\Interfaces\ITalkBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTalkBehaviour.cs" />
@@ -111,7 +112,6 @@
     <Compile Include="Simulator\StateMachine\StateMachine.cs" />
     <Compile Include="Simulator\StateMachine\State\AbstractState.cs" />
     <Compile Include="Simulator\Factory\GameEnv.cs" />
-    <Compile Include="Simulator\Factory\Program.cs" />
     <Compile Include="Simulator\Factory\Map\AbstractMap.cs" />
     <Compile Include="Simulator\Factory\Map\GameMap.cs" />
     <Compile Include="Simulator\Factory\Factory\AbstractFactory.cs" />
