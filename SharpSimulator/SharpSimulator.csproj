@@ -62,21 +62,11 @@
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Subway.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\Access\AbstractAccess.cs" />
-    <Compile Include="Factories\Access\SubwayAccess\ConcretAccess.cs" />
-    <Compile Include="Factories\Access\SubwayAccess\Tunnel.cs" />
-    <Compile Include="Factories\Area\AbstractArea.cs" />
-    <Compile Include="Factories\Area\Frame.cs" />
-    <Compile Include="Factories\Area\SubwayArea\Wall.cs" />
-    <Compile Include="Factories\Factory\AbstractFactory.cs" />
-    <Compile Include="Factories\Factory\AbstractMapFactory.cs" />
-    <Compile Include="Factories\Factory\SubwayFactory\SubwayFactory.cs" />
-    <Compile Include="Factories\GameEnv.cs" />
-    <Compile Include="Factories\Map\AbstractMap.cs" />
-    <Compile Include="Factories\Map\GameMap.cs" />
-    <Compile Include="Factories\Program.cs" />
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainWindow.cs" />
     <Compile Include="Program.cs" />
@@ -120,6 +110,19 @@
     <Compile Include="Simulator\StateMachine\State\NoMapLoadedState.cs" />
     <Compile Include="Simulator\StateMachine\StateMachine.cs" />
     <Compile Include="Simulator\StateMachine\State\AbstractState.cs" />
+    <Compile Include="Simulator\Factory\GameEnv.cs" />
+    <Compile Include="Simulator\Factory\Program.cs" />
+    <Compile Include="Simulator\Factory\Map\AbstractMap.cs" />
+    <Compile Include="Simulator\Factory\Map\GameMap.cs" />
+    <Compile Include="Simulator\Factory\Factory\AbstractFactory.cs" />
+    <Compile Include="Simulator\Factory\Factory\AbstractMapFactory.cs" />
+    <Compile Include="Simulator\Factory\Factory\SubwayFactory\SubwayFactory.cs" />
+    <Compile Include="Simulator\Factory\Area\AbstractArea.cs" />
+    <Compile Include="Simulator\Factory\Area\Frame.cs" />
+    <Compile Include="Simulator\Factory\Area\SubwayArea\Wall.cs" />
+    <Compile Include="Simulator\Factory\Access\AbstractAccess.cs" />
+    <Compile Include="Simulator\Factory\Access\SubwayAccess\ConcretAccess.cs" />
+    <Compile Include="Simulator\Factory\Access\SubwayAccess\Tunnel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -130,8 +133,5 @@
     <None Include="..\README.md">
       <Link>README.md</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Factories\Factory\res\subwayFile.txt" />
   </ItemGroup>
 </Project>
