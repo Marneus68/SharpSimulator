@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -30,6 +30,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
@@ -50,9 +53,6 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Mono.Posix" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -93,18 +93,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Simulator\" />
-    <Folder Include="Simulator\Entities\" />
-    <Folder Include="Simulator\Behaviours\" />
-    <Folder Include="Simulator\Behaviours\Interfaces\" />
-    <Folder Include="Simulator\Entities\EntityDefinition\" />
-    <Folder Include="Simulator\Entities\EntityDefinition\Characteristics\" />
     <Folder Include="Simulator\Entities\EntityDefinition\Skill\" />
-    <Folder Include="Simulator\Factions\" />
-    <Folder Include="Simulator\Factions\Interfaces\" />
-    <Folder Include="Test\" />
-    <Folder Include="Utils\" />
-    <Folder Include="Logger\" />
+    <Folder Include="Simulator\Factory\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
