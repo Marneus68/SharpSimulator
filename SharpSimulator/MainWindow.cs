@@ -1,12 +1,15 @@
 ﻿using System;
 using Gtk;
 
-public partial class MainWindow: Gtk.Window
+public partial class MainWindow : Gtk.Window
 {
 	private static SharpSimulator.EntityManager manager;
 	private static SharpSimulator.Faction faction;  
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel) {
+
+		SharpSimulator.TilesProvider tp = new SharpSimulator.TilesProvider ();
+		SharpSimulator.SpritesProvider sp = new SharpSimulator.SpritesProvider ();
 
 		SetDefaultSize(800, 600);
 

@@ -62,9 +62,18 @@
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
-    <None Include="Resources\Subway.json">
+    <EmbeddedResource Include="Resources\Tiles\black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\square.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Scenarios\Subway.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
@@ -92,7 +101,6 @@
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Perception.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Characteristic.cs" />
     <Compile Include="Test\FactionTest.cs" />
-    <Compile Include="Test\FactoryTest.cs" />
     <Compile Include="Utils\TextUtils.cs" />
     <Compile Include="Simulator\Behaviours\Interfaces\ITalkBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTalkBehaviour.cs" />
@@ -123,10 +131,16 @@
     <Compile Include="Simulator\Factory\Access\AbstractAccess.cs" />
     <Compile Include="Simulator\Factory\Access\SubwayAccess\ConcretAccess.cs" />
     <Compile Include="Simulator\Factory\Access\SubwayAccess\Tunnel.cs" />
+    <Compile Include="Simulator\GUI\TilesProvider.cs" />
+    <Compile Include="Simulator\GUI\SpritesProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Simulator\Entities\EntityDefinition\Skill\" />
+    <Folder Include="Resources\Sprites\" />
+    <Folder Include="Resources\Tiles\" />
+    <Folder Include="Simulator\GUI\" />
+    <Folder Include="Resources\Scenarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
