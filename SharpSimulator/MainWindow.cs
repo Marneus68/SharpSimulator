@@ -3,16 +3,31 @@ using Gtk;
 
 public partial class MainWindow : Gtk.Window
 {
-	private static SharpSimulator.EntityManager manager;
-	private static SharpSimulator.Faction faction;  
+	private static SharpSimulator.EntityManager		EntityManager;
+	//private static SharpSimulator.Faction faction;  
+
+	private static SharpSimulator.TilesProvider		TilesProvider = new SharpSimulator.TilesProvider();
+	private static SharpSimulator.SpritesProvider	SpritesProvider = new SharpSimulator.SpritesProvider();
+
+	private VBox MainBox;
+
+	static MainWindow() {
+	
+	}
 
 	public MainWindow () : base (Gtk.WindowType.Toplevel) {
-
-		SharpSimulator.TilesProvider tp = new SharpSimulator.TilesProvider ();
-		SharpSimulator.SpritesProvider sp = new SharpSimulator.SpritesProvider ();
-
 		SetDefaultSize(800, 600);
 
+		MainBox = new VBox (false, 0);
+
+		/*
+		Layout MainLayout = new Layout ();
+		MainBox.Add (MainLayout);
+		Fixed fixedLayout = new Fixed();
+		MainLayout.Add(fixedLayout);
+*/
+
+		/*
 		manager = new SharpSimulator.EntityManager ();
 		faction = new SharpSimulator.Faction ("Faction");
 
@@ -65,41 +80,18 @@ public partial class MainWindow : Gtk.Window
 		p.Pack2(nb, true, true);
 
 		this.Add(p);
+		*/
+
+		this.Add(MainBox);
 
 		ShowAll ();
 	}
 
+	/*
 	static void add_civilian(object obj, EventArgs args) {
 		manager.Add (new SharpSimulator.CivilianEntity ());
 	}
-
-	static void add_fighter(object obj, EventArgs args) {
-		manager.Add (new SharpSimulator.FighterEntity (faction));
-	}
-
-	static void move_entities(object obj, EventArgs args) {
-		manager.Move ();
-	}
-
-	static void taunt_entities(object obj, EventArgs args) {
-		manager.Talk ();
-	}
-
-	static void fight_entities(object obj, EventArgs args) {
-		manager.Fight ();
-	}
-
-	static void state_of_war(object obj, EventArgs args) {
-		//faction.Relation = SharpSimulator.Faction.Relation.WAR;
-		//faction.Update ();
-	}
-
-	static void state_of_peace(object obj, EventArgs args) {
-		//faction.Relation = SharpSimulator.Faction.Relation.PEACE;
-		//faction.Update ();
-
-		SharpSimulator.Logger.LogChain.Message ("Hey", SharpSimulator.Logger.Level.ERROR);
-	}
+	*/
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a) {
 		Application.Quit ();

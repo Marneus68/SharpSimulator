@@ -4,7 +4,7 @@ namespace SharpSimulator
 {
 	class IdleState:AbstractState
 	{
-		public IdleState(StateMachine machine)
+		public IdleState(IStateMachine machine)
 			: base(machine)
 		{
 		}

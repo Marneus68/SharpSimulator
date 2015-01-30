@@ -4,7 +4,7 @@ namespace SharpSimulator
 {
 	class PlayState:AbstractState
 	{
-		public PlayState(StateMachine machine)
+		public PlayState(IStateMachine machine)
 			: base(machine)
 		{
 

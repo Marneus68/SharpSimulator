@@ -71,7 +71,7 @@
     <EmbeddedResource Include="Resources\Tiles\white.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Scenarios\Subway.json">
+    <EmbeddedResource Include="Resources\Simulations\Subway.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -133,6 +133,11 @@
     <Compile Include="Simulator\Factory\Access\SubwayAccess\Tunnel.cs" />
     <Compile Include="Simulator\GUI\TilesProvider.cs" />
     <Compile Include="Simulator\GUI\SpritesProvider.cs" />
+    <Compile Include="SimulatorWindow.cs" />
+    <Compile Include="gtk-gui\SharpSimulator.SimulatorWindow.cs" />
+    <Compile Include="Simulator\StateMachine\ConcreteStateMachine.cs" />
+    <Compile Include="Simulator\StateMachine\IStateMachine.cs" />
+    <Compile Include="Simulator\GUI\SimulationsProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -140,7 +145,7 @@
     <Folder Include="Resources\Sprites\" />
     <Folder Include="Resources\Tiles\" />
     <Folder Include="Simulator\GUI\" />
-    <Folder Include="Resources\Scenarios\" />
+    <Folder Include="Resources\Simulations\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

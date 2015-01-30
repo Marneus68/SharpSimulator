@@ -32,20 +32,25 @@ namespace SharpSimulator {
 
 		protected static void PopulateTilesDict() {
 			path = "./" + resource_folder + "/" + subfolder;
+
 			Logger.LogChain.Message ("[" + provider_name + "] Populating the provider with the content of \"" + path + "\"", Logger.Level.SIMULATION_DEBUG);
 
+			string[] dirContent;
+
 			try {
-				var dirContent = Directory.GetFiles (path, "*.png");
+				dirContent = Directory.GetFiles (path, "*.png");
 			} catch (Exception e) {
-				Logger.LogChain.Message ("[" + provider_name + "] Cannot find \"" + path + "\" or the folder is empty.", Logger.Level.SIMULATION_DEBUG);
+				Logger.LogChain.Message ("[" + provider_name + "] Cannot find \"" + path + "\" or the folder is empty. [\" + e.Message + \"]\"", Logger.Level.SIMULATION_DEBUG);
 				return;
 			}
 
-			foreach(var line in Directory.GetFiles(path, "*.png")) {
+			foreach(var line in dirContent) {
 				var key = line.Replace (path, "").Replace ("\\", "").Replace (file_extention, "");
 				Logger.LogChain.Message ("[" + provider_name + "] " + key + " (" + line.Replace ("\\", "/") + ")", Logger.Level.SIMULATION_DEBUG);
 				tiles.Add (key, new Image (line.Replace ("\\", "/")));
 			}
+
+			Logger.LogChain.Message ("[" + provider_name + "] Exiting the provider population function, " + dirContent.Length.ToString() + " objects found. in \"" + path + "\"", Logger.Level.SIMULATION_DEBUG);
 		}
 	}
 }

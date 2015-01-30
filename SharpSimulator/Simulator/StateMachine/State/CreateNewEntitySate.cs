@@ -4,7 +4,7 @@ namespace SharpSimulator
 {
 	class CreateNewEntitySate:AbstractState
 	{
-		public CreateNewEntitySate(StateMachine machine)
+		public CreateNewEntitySate(IStateMachine machine)
 			: base(machine)
 		{
 		}
