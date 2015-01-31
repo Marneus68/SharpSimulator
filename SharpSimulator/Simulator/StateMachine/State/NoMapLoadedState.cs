@@ -7,18 +7,15 @@ namespace SharpSimulator
 {
 	class NoMapLoadedState : AbstractState
 	{
-		public NoMapLoadedState(IStateMachine machine) : base(machine) {
-		}
+		public NoMapLoadedState(IStateMachine machine) : base(machine) {}
 
-		public override void LoadMap(String jsonMapPath = "")
-		{
+		public override void LoadMap(String jsonMapPath = "") {
 			Logger.LogChain.Message("loadMap",Logger.Level.SIMULATION_DEBUG);
 			machine.ChangeState(typeof(IdleState));
 		}
 
 		public override List<Button> ButtonsForBar(Window window) {
 			TilesProvider tp = new TilesProvider ();
-
 
 			var ret = new List<Button> ();
 			SimulationsProvider sp = new SimulationsProvider ();
@@ -27,6 +24,13 @@ namespace SharpSimulator
 				ret.Add(new Button(sim.Replace(".json", "")));
 			}
 			return ret;
+		}
+
+		public override void BuildButtonBar (ButtonBox buttonsBox, List<Button> buttonsList) {
+			base.BuildButtonBar (buttonsBox, buttonsList);
+			foreach (var btn in buttonsList) {
+				btn.Clicked += new EventHandler (SimulatorWindow.load_map_btn_event);
+			}
 		}
 	}
 }

@@ -4,6 +4,13 @@
 		'description':'Simulation taking place in the subway tunels during comute.'
 		'default-texture':'black',
 		'default-entity':'entity',
+		'actions': [
+			{"Previous Step":"previous_step"},
+			{"Play":"play"},
+			{"Pause":"pause"},
+			{"Next Step":"next_step"},
+			{"Stop Simulation":"stop_simulation"}
+		],
 		'size': {'x': 4, 'y': 4},
 		'access':[
 			{ from: {x: 1, y:0}, to: {x: 1, y: 1} },

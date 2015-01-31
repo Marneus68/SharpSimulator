@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+
+using Gtk;
 
 namespace SharpSimulator
 {
@@ -14,6 +17,26 @@ namespace SharpSimulator
 			Logger.LogChain.Message("Pause",Logger.Level.SIMULATION_DEBUG);
 
 			machine.ChangeState(typeof(IdleState));
+		}
+
+		public override List<Button> ButtonsForBar (Window window) {
+			List<Button> ret = new List<Button> ();
+
+			Dictionary<string, string> arr = new Dictionary<string, string>(){ {"Pause","pause"} };
+			foreach (var s in arr) {
+				var tmp_btn = new Button (s.Key);
+
+				switch (s.Value) {
+				case "pause":
+					tmp_btn.Clicked += new EventHandler (SimulatorWindow.pause);
+					break;
+				default:
+					break;
+				}
+
+				ret.Add(tmp_btn);
+			}
+			return ret;
 		}
 	}
 }
