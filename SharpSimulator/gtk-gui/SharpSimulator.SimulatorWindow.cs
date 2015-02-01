@@ -14,7 +14,9 @@ namespace SharpSimulator
 		
 		private global::Gtk.Frame MainFrame;
 		
-		private global::Gtk.Alignment GtkAlignment;
+		private global::Gtk.ScrolledWindow GtkScrolledWindow2;
+		
+		private global::Gtk.Alignment MainAlignement;
 		
 		private global::Gtk.Label SimulationLabel;
 		
@@ -54,7 +56,7 @@ namespace SharpSimulator
 			this.vpaned1.HeightRequest = 600;
 			this.vpaned1.CanFocus = true;
 			this.vpaned1.Name = "vpaned1";
-			this.vpaned1.Position = 546;
+			this.vpaned1.Position = 580;
 			// Container child vpaned1.Gtk.Paned+PanedChild
 			this.MainBox = new global::Gtk.VBox ();
 			this.MainBox.Name = "MainBox";
@@ -72,21 +74,30 @@ namespace SharpSimulator
 			this.MainFrame.Name = "MainFrame";
 			this.MainFrame.ShadowType = ((global::Gtk.ShadowType)(0));
 			// Container child MainFrame.Gtk.Container+ContainerChild
-			this.GtkAlignment = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
-			this.GtkAlignment.Name = "GtkAlignment";
-			this.GtkAlignment.LeftPadding = ((uint)(12));
-			this.MainFrame.Add (this.GtkAlignment);
+			this.GtkScrolledWindow2 = new global::Gtk.ScrolledWindow ();
+			this.GtkScrolledWindow2.Name = "GtkScrolledWindow2";
+			this.GtkScrolledWindow2.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child GtkScrolledWindow2.Gtk.Container+ContainerChild
+			global::Gtk.Viewport w3 = new global::Gtk.Viewport ();
+			w3.ShadowType = ((global::Gtk.ShadowType)(0));
+			// Container child GtkViewport.Gtk.Container+ContainerChild
+			this.MainAlignement = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
+			this.MainAlignement.Name = "MainAlignement";
+			this.MainAlignement.LeftPadding = ((uint)(12));
+			w3.Add (this.MainAlignement);
+			this.GtkScrolledWindow2.Add (w3);
+			this.MainFrame.Add (this.GtkScrolledWindow2);
 			this.SimulationLabel = new global::Gtk.Label ();
 			this.SimulationLabel.Name = "SimulationLabel";
 			this.SimulationLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Simulation");
 			this.SimulationLabel.UseMarkup = true;
 			this.MainFrame.LabelWidget = this.SimulationLabel;
 			this.MainBox.Add (this.MainFrame);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.MainBox [this.MainFrame]));
-			w4.Position = 1;
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.MainBox [this.MainFrame]));
+			w7.Position = 1;
 			this.vpaned1.Add (this.MainBox);
-			global::Gtk.Paned.PanedChild w5 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.MainBox]));
-			w5.Resize = false;
+			global::Gtk.Paned.PanedChild w8 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.MainBox]));
+			w8.Resize = false;
 			// Container child vpaned1.Gtk.Paned+PanedChild
 			this.notebook1 = new global::Gtk.Notebook ();
 			this.notebook1.CanFocus = true;
@@ -118,8 +129,8 @@ namespace SharpSimulator
 			this.EntityOverviewLabel.Name = "EntityOverviewLabel";
 			this.GtkScrolledWindow.Add (this.EntityOverviewLabel);
 			this.notebook1.Add (this.GtkScrolledWindow);
-			global::Gtk.Notebook.NotebookChild w9 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.GtkScrolledWindow]));
-			w9.Position = 1;
+			global::Gtk.Notebook.NotebookChild w12 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.GtkScrolledWindow]));
+			w12.Position = 1;
 			// Notebook tab
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
@@ -127,9 +138,9 @@ namespace SharpSimulator
 			this.notebook1.SetTabLabel (this.GtkScrolledWindow, this.label2);
 			this.label2.ShowAll ();
 			this.vpaned1.Add (this.notebook1);
-			global::Gtk.Paned.PanedChild w10 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.notebook1]));
-			w10.Resize = false;
-			w10.Shrink = false;
+			global::Gtk.Paned.PanedChild w13 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.notebook1]));
+			w13.Resize = false;
+			w13.Shrink = false;
 			this.Add (this.vpaned1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

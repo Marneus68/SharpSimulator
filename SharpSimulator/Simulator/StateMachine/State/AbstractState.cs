@@ -55,10 +55,12 @@ namespace SharpSimulator
 				buttonsBox.ShowAll ();
 			}
 		}
-		public virtual void BuildMainLayout(Layout layout, Widget widget) {
-
+		public virtual Widget BuildMainLayout() {
+			var lab = new Label ();
+			lab.Markup = "<b>No simulation loaded...</b>";
+			return lab;
 		}
-		public virtual List<Button> ButtonsForBar(Window window) {
+		public virtual List<Button> ButtonsForBar(SimulatorWindow window) {
 			return new List<Button> ();
 		}
 	}

@@ -19,7 +19,12 @@ namespace SharpSimulator
 			machine.ChangeState(typeof(IdleState));
 		}
 
-		public override List<Button> ButtonsForBar (Window window) {
+		public override Widget BuildMainLayout() {
+			var fi = new Fixed ();
+			return fi;
+		}
+
+		public override List<Button> ButtonsForBar (SimulatorWindow window) {
 			List<Button> ret = new List<Button> ();
 
 			Dictionary<string, string> arr = new Dictionary<string, string>(){ {"Pause","pause"} };

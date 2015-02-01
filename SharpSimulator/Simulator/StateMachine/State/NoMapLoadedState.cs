@@ -14,7 +14,7 @@ namespace SharpSimulator
 			machine.ChangeState(typeof(IdleState));
 		}
 
-		public override List<Button> ButtonsForBar(Window window) {
+		public override List<Button> ButtonsForBar(SimulatorWindow window) {
 			TilesProvider tp = new TilesProvider ();
 
 			var ret = new List<Button> ();

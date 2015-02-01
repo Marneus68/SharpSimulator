@@ -19,6 +19,10 @@ namespace SharpSimulator
 			CurrentState = new NoMapLoadedState(this);
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
 			CurrentState.BuildButtonBar (MainButtonBox, mainMenuButtonList);
+
+			BuildMainView (CurrentState.BuildMainLayout());
+
+			this.ShowAll ();
 		}
 
 		public void ChangeState(Type newState) {
@@ -31,6 +35,8 @@ namespace SharpSimulator
 			}
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
 			CurrentState.BuildButtonBar (MainButtonBox, mainMenuButtonList);
+			BuildMainView (CurrentState.BuildMainLayout());
+			this.ShowAll ();
 		}
 
 		public void LoadMap(String jsonMapPath = "") {
@@ -67,6 +73,15 @@ namespace SharpSimulator
 
 		public void BuildButtonBar(ButtonBox buttonsBox, List<Button> buttonsList) {
 			CurrentState.BuildButtonBar (buttonsBox, buttonsList);
+		}
+
+		public void BuildMainView(Widget widget) {
+			foreach (var child in MainAlignement.Children) {
+				MainAlignement.Remove (child);
+			}
+			if (widget != null) {
+				MainAlignement.Add (widget);
+			}
 		}
 
 		/* button events */

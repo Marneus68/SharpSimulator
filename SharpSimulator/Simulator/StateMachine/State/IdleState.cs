@@ -47,7 +47,12 @@ namespace SharpSimulator
 
 		}
 
-		public override List<Button> ButtonsForBar (Window window) {
+		public override Widget BuildMainLayout() {
+			var fi = new Fixed ();
+			return fi;
+		}
+
+		public override List<Button> ButtonsForBar (SimulatorWindow window) {
 			List<Button> ret = new List<Button> ();
 
 			Dictionary<string, string> arr = new Dictionary<string, string>(){ {"Previous Step","previous_step"}, {"Play","play"}, {"Next Step", "next_step"}, {"Stop Simulation", "stop_simulation"} };
