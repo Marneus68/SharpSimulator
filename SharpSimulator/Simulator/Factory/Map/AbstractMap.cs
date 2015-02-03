@@ -11,22 +11,22 @@ namespace SharpSimulator.Map
 {
      public abstract class AbstractMap
      {
-         public string description;
-         public string name;
-         public int mapX;
-         public int mapY;
-         public int mapSize;
-         public AbstractArea[,] areaList;
-         public List<AbstractAccess> accessList;
-         public List<IFactionMember> entityList;
-         public Dictionary<string, string> actions;
-         public string[,] textures;
-         public AbstractMapFactory mapFactory;
-         public abstract AbstractMap generateMap();
-         internal abstract void AddArea();
-         internal abstract void AddAccess();
-         internal abstract void AddTexture();
-         internal abstract void AddActions();
-         internal abstract void AddEntities();
+         public string Description;
+         public string Name;
+         public int MapX;
+         public int MapY;
+         public int MapSize;
+         public AbstractArea[,] AreaList;
+         public List<AbstractAccess> AccessList;
+         public List<IFactionMember> EntityList;
+         public Dictionary<string, string> Actions;
+         public string[,] Textures;
+         public AbstractMapFactory MapFactory;
+         public abstract AbstractMap GenerateMap();
+         public abstract void AddArea();
+         public abstract void AddAccess();
+         public abstract void AddTexture();
+         public abstract void AddActions();
+         public abstract void AddEntities();
      }
 }

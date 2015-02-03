@@ -18,11 +18,11 @@ namespace SharpSimulator
 			protected set {map = value;}
 		}
 			
-		public String Name {get {return map.name;}}
-		public String Description {get {return map.description;}}
-		public String MapWidth {get {return map.mapX.ToString();}}
-		public String MapHeight {get {return map.mapY.ToString();}}
-		public String MapSize {get {return map.mapSize.ToString();}}
+		public String Name {get {return map.Name;}}
+		public String Description {get {return map.Description;}}
+		public String MapWidth {get {return map.MapX.ToString();}}
+		public String MapHeight {get {return map.MapY.ToString();}}
+		public String MapSize {get {return map.MapSize.ToString();}}
 		// TOTO
 		// and so on...
 
@@ -33,7 +33,7 @@ namespace SharpSimulator
 		}
 
 		public static AbstractMap CreateGameMap(AbstractMapFactory factoryIn) {
-            return (new GameMap(factoryIn)).generateMap();
+            return (new GameMap(factoryIn)).GenerateMap();
         }
     }
 }
