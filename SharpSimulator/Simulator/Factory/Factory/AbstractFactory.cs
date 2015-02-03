@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpSimulator.Factory
 {
-    abstract class AbstractFactory
+    public abstract class AbstractFactory
     {
     }
 }

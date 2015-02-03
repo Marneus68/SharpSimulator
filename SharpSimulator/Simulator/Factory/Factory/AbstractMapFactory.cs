@@ -8,7 +8,7 @@ using SharpSimulator.Access;
 
 namespace SharpSimulator.Factory
 {
-    abstract class AbstractMapFactory:AbstractFactory
+    public abstract class AbstractMapFactory:AbstractFactory
     {
 
         public string description;

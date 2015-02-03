@@ -9,7 +9,7 @@ using SharpSimulator.Factory;
 
 namespace SharpSimulator.Map
 {
-    class GameMap:AbstractMap
+    public class GameMap:AbstractMap
     {
 
         public GameMap(AbstractMapFactory factoryIn) {

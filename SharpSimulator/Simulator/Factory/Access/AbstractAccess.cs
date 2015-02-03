@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpSimulator.Access
 {
-    interface AbstractAccess
+    public interface AbstractAccess
     {
          string Name{set; get;}
     }

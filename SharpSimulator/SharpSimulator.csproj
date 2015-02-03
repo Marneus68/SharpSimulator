@@ -121,7 +121,6 @@
     <Compile Include="Simulator\StateMachine\State\NoMapLoadedState.cs" />
     <Compile Include="Simulator\StateMachine\StateMachine.cs" />
     <Compile Include="Simulator\StateMachine\State\AbstractState.cs" />
-    <Compile Include="Simulator\Factory\GameEnv.cs" />
     <Compile Include="Simulator\Factory\Map\AbstractMap.cs" />
     <Compile Include="Simulator\Factory\Map\GameMap.cs" />
     <Compile Include="Simulator\Factory\Factory\AbstractFactory.cs" />
@@ -139,6 +138,7 @@
     <Compile Include="Simulator\StateMachine\ConcreteStateMachine.cs" />
     <Compile Include="Simulator\StateMachine\IStateMachine.cs" />
     <Compile Include="Simulator\GUI\SimulationsProvider.cs" />
+    <Compile Include="Simulator\Factory\GameContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

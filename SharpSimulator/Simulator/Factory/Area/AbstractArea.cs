@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpSimulator.Area
 {
-    abstract class AbstractArea
+    public abstract class AbstractArea
     {
         internal int coordX;
         internal int coordY;

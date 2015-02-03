@@ -10,12 +10,8 @@ using System.IO;
 
 using Newtonsoft.Json.Linq;
 
-namespace SharpSimulator.Factory
-{
-    class SubwayFactory: AbstractMapFactory
-    {
-
-       
+namespace SharpSimulator.Factory {
+    public class SubwayFactory : AbstractMapFactory {
         public SubwayFactory() {
 
             Console.WriteLine("intest");

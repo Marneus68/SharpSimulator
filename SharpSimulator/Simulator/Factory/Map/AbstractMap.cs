@@ -9,7 +9,7 @@ using SharpSimulator.Factory;
 
 namespace SharpSimulator.Map
 {
-     abstract class AbstractMap
+     public abstract class AbstractMap
      {
          public string description;
          public string name;

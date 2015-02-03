@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpSimulator.Access
 {
-    class ConcretAccess:AbstractAccess
+    public class ConcretAccess:AbstractAccess
     {
         internal int coordX1;
         internal int coordY1;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpSimulator.Area
 {
-    class Frame: AbstractArea
+    public class Frame: AbstractArea
     {
 
         public Frame(int x = 0, int y = 0, bool blockedIn = true, string nameIn = "simple case") {
