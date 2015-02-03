@@ -10,9 +10,9 @@ namespace SharpSimulator.Area
     {
 
         public Frame(int x = 0, int y = 0, bool blockedIn = true, string nameIn = "simple case") {
-            coordX = x;
-            coordY = y;
-            blocked = blockedIn;
+            CoordX = x;
+            CoordY = y;
+            Blocked = blockedIn;
             name = nameIn;
         }
 

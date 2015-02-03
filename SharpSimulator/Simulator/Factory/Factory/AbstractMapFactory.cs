@@ -11,13 +11,13 @@ namespace SharpSimulator.Factory
     public abstract class AbstractMapFactory:AbstractFactory
     {
 
-        public string description;
-        public string name;
-        public int mapX;
-        public int mapY;
-        internal string jsonPath;
-        internal dynamic mapFile;
-        internal int mapSize;
+        public string Description;
+        public string Name;
+        public int MapX;
+        public int MapY;
+        public string JsonPath;
+        public dynamic MapFile;
+        public int MapSize;
         abstract internal AbstractArea[,] GenerateArea();
         abstract internal List<AbstractAccess> GenerateAccess();
         abstract internal string[,] GenerateTextures();
