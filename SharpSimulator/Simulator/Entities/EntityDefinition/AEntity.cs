@@ -7,7 +7,6 @@ namespace SharpSimulator {
 		public IMoveBehaviour		MoveBehaviour {get; set;}
 		public ITalkBehaviour		TalkBehaviour {get; set;}
 		public IDisplayBehaviour	DisplayBehaviour {get; set;}
-
 		public string 	FirstName {get; protected set;}
 		public string 	LastName {get; protected set;}
 
