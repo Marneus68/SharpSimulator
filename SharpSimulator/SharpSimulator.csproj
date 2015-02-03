@@ -93,7 +93,6 @@
     <Compile Include="Simulator\Factions\TestEntity.cs" />
     <Compile Include="Simulator\Factions\Faction.cs" />
     <Compile Include="Simulator\Factions\Interfaces\IFactionMember.cs" />
-    <Compile Include="Simulator\Factory\Factory\program.cs" />
     <Compile Include="Test\CharacteristicsTest.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Strength.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Intelligence.cs" />
