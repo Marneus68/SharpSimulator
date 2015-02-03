@@ -20,6 +20,13 @@ namespace SharpSimulator.Map
             AddArea();
             AddAccess();
             AddTexture();
+            AddActions();
+            AddEntities();
+            mapSize = mapFactory.mapSize;
+            mapX = mapFactory.mapX;
+            mapY = mapFactory.mapY;
+            name = mapFactory.name;
+            description = mapFactory.description;
             return this;
         }
 
@@ -36,6 +43,16 @@ namespace SharpSimulator.Map
 
         internal override void AddTexture(){
             textures = mapFactory.GenerateTextures();
+        }
+
+        internal override void AddActions()
+        {
+            actions = mapFactory.GenerateActions();
+        }
+
+        internal override void AddEntities ()
+        {
+            entityList = mapFactory.GenerateEntities();
         }
     }
 }
