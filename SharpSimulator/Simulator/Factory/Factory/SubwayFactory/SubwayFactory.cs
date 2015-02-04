@@ -92,7 +92,6 @@ namespace SharpSimulator.Factory {
                 for (int y = 0; y < MapY; y++)
                 {
                     try{
-                     var tmpFrame = textures[x, y];
                      if (textures[x, y] == null)
                      {
                         textures[x, y] = MapFile.Map.default_texture;
