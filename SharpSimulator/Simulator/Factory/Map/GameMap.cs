@@ -9,50 +9,50 @@ using SharpSimulator.Factory;
 
 namespace SharpSimulator.Map
 {
-    class GameMap:AbstractMap
+    public class GameMap:AbstractMap
     {
 
         public GameMap(AbstractMapFactory factoryIn) {
-            mapFactory = factoryIn;
+            MapFactory = factoryIn;
         }
 
-        public override AbstractMap generateMap(){
+        public override AbstractMap GenerateMap(){
             AddArea();
             AddAccess();
             AddTexture();
             AddActions();
             AddEntities();
-            mapSize = mapFactory.mapSize;
-            mapX = mapFactory.mapX;
-            mapY = mapFactory.mapY;
-            name = mapFactory.name;
-            description = mapFactory.description;
+            MapSize = MapFactory.MapSize;
+            MapX = MapFactory.MapX;
+            MapY = MapFactory.MapY;
+            Name = MapFactory.Name;
+            Description = MapFactory.Description;
             return this;
         }
 
-        internal override void AddAccess()
+        public override void AddAccess()
         {
-            accessList = mapFactory.GenerateAccess();
+            AccessList = MapFactory.GenerateAccess();
         }
 
-        internal override void AddArea()
+        public override void AddArea()
         {
-            areaList = mapFactory.GenerateArea();
+            AreaList = MapFactory.GenerateArea();
         }
 
 
-        internal override void AddTexture(){
-            textures = mapFactory.GenerateTextures();
+        public override void AddTexture(){
+            Textures = MapFactory.GenerateTextures();
         }
 
-        internal override void AddActions()
+        public override void AddActions()
         {
-            actions = mapFactory.GenerateActions();
+            Actions = MapFactory.GenerateActions();
         }
 
-        internal override void AddEntities ()
+        public override void AddEntities ()
         {
-            entityList = mapFactory.GenerateEntities();
+            EntityList = MapFactory.GenerateEntities();
         }
     }
 }

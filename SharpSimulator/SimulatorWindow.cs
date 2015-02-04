@@ -9,12 +9,14 @@ namespace SharpSimulator
 	{
 		public static SimulatorWindow Shared = null;
 
+		protected GameContext context;
 		protected AbstractState CurrentState;
 
 		List<Button> mainMenuButtonList;
 
 		public SimulatorWindow () : base (Gtk.WindowType.Toplevel) {
 			this.Build ();
+			context = new GameContext ();
 			Shared = this;
 			CurrentState = new NoMapLoadedState(this);
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
@@ -40,6 +42,12 @@ namespace SharpSimulator
 		}
 
 		public void LoadMap(String jsonMapPath = "") {
+
+			context.ChargeSimulation (new Factory.SubwayFactory(), "sqlkdsqkjlklqjds");
+
+			SimulationOverviewLabel.Editable = false;
+			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;
+
 			CurrentState.LoadMap(jsonMapPath);
 		}
 

@@ -33,6 +33,12 @@ namespace SharpSimulator
 		private global::Gtk.TextView EntityOverviewLabel;
 		
 		private global::Gtk.Label label2;
+		
+		private global::Gtk.ScrolledWindow GtkScrolledWindow3;
+		
+		private global::Gtk.TextView SimulationOverviewLabel;
+		
+		private global::Gtk.Label SimulationOverview;
 
 		protected virtual void Build ()
 		{
@@ -102,7 +108,7 @@ namespace SharpSimulator
 			this.notebook1 = new global::Gtk.Notebook ();
 			this.notebook1.CanFocus = true;
 			this.notebook1.Name = "notebook1";
-			this.notebook1.CurrentPage = 1;
+			this.notebook1.CurrentPage = 0;
 			// Container child notebook1.Gtk.Notebook+NotebookChild
 			this.GtkScrolledWindow1 = new global::Gtk.ScrolledWindow ();
 			this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
@@ -137,10 +143,28 @@ namespace SharpSimulator
 			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("Entity Overview");
 			this.notebook1.SetTabLabel (this.GtkScrolledWindow, this.label2);
 			this.label2.ShowAll ();
+			// Container child notebook1.Gtk.Notebook+NotebookChild
+			this.GtkScrolledWindow3 = new global::Gtk.ScrolledWindow ();
+			this.GtkScrolledWindow3.Name = "GtkScrolledWindow3";
+			this.GtkScrolledWindow3.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child GtkScrolledWindow3.Gtk.Container+ContainerChild
+			this.SimulationOverviewLabel = new global::Gtk.TextView ();
+			this.SimulationOverviewLabel.CanFocus = true;
+			this.SimulationOverviewLabel.Name = "SimulationOverviewLabel";
+			this.GtkScrolledWindow3.Add (this.SimulationOverviewLabel);
+			this.notebook1.Add (this.GtkScrolledWindow3);
+			global::Gtk.Notebook.NotebookChild w14 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.GtkScrolledWindow3]));
+			w14.Position = 2;
+			// Notebook tab
+			this.SimulationOverview = new global::Gtk.Label ();
+			this.SimulationOverview.Name = "SimulationOverview";
+			this.SimulationOverview.LabelProp = global::Mono.Unix.Catalog.GetString ("Simulation Overview");
+			this.notebook1.SetTabLabel (this.GtkScrolledWindow3, this.SimulationOverview);
+			this.SimulationOverview.ShowAll ();
 			this.vpaned1.Add (this.notebook1);
-			global::Gtk.Paned.PanedChild w13 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.notebook1]));
-			w13.Resize = false;
-			w13.Shrink = false;
+			global::Gtk.Paned.PanedChild w15 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.notebook1]));
+			w15.Resize = false;
+			w15.Shrink = false;
 			this.Add (this.vpaned1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
