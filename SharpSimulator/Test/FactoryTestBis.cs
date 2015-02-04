@@ -15,7 +15,7 @@ namespace SharpSimulator.Test
 		public void FactorySubwayTextures () {
             GameContext env = new GameContext();
             env.ChargeSimulation(new SubwayFactory(),"Subway.json");
-			Assert.AreEqual ("black",env.Map.Textures[2,3]);
+			Assert.AreEqual ("black",env.Map.Textures[1,3]);
         }
 
         [Test()]

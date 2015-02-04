@@ -62,7 +62,10 @@ namespace SharpSimulator.Factory {
                 for (int y = 0; y < MapY; y++)
                 {
                     try{
-                     var tmpFrame = areas[x, y];
+                     if( areas[x, y] == null){
+                        areas[x, y] = new Frame(x, y, true);
+                     }
+
                     }catch(Exception e){
                         // block the default frame because decor
                         areas[x, y] = new Frame(x, y, true);
@@ -90,6 +93,10 @@ namespace SharpSimulator.Factory {
                 {
                     try{
                      var tmpFrame = textures[x, y];
+                     if (textures[x, y] == null)
+                     {
+                        textures[x, y] = MapFile.Map.default_texture;
+                     }
                     }catch(Exception e){
                         // fill missing textures with the deafault setting
                         textures[x, y] = MapFile.Map.default_texture;
