@@ -13,16 +13,20 @@ using Newtonsoft.Json.Linq;
 namespace SharpSimulator.Factory {
     public class SubwayFactory : AbstractMapFactory {
         public SubwayFactory() {
-			Logger.LogChain.Message ("intest", Logger.Level.SIMULATION_DEBUG);
+        }
+        public override void init(string filePath)
+        {
+            Logger.LogChain.Message("intest", Logger.Level.SIMULATION_DEBUG);
             FileInfo fileInfo = new FileInfo(Directory.GetCurrentDirectory());
-            JsonPath = fileInfo.FullName + @"\..\..\Resources\Simulations\Subway.json";
+            JsonPath = fileInfo.FullName + @"\..\..\Resources\Simulations\"+filePath;
             try
             {
-            MapFile = JObject.Parse(File.ReadAllText(JsonPath));
+                MapFile = JObject.Parse(File.ReadAllText(JsonPath));
             }
-            catch (Exception e) {
-				Logger.LogChain.Message ("FIle exception !!!  where is the Json Not in the kitchen", Logger.Level.SIMULATION_DEBUG);
-				Logger.LogChain.Message ("your current directory is"+ fileInfo.FullName, Logger.Level.SIMULATION_DEBUG);
+            catch (Exception e)
+            {
+                Logger.LogChain.Message("FIle exception !!!  where is the Json Not in the kitchen", Logger.Level.SIMULATION_DEBUG);
+                Logger.LogChain.Message("your current directory is" + fileInfo.FullName, Logger.Level.SIMULATION_DEBUG);
             };
             MapSize = MapFile.Map.size.x * MapFile.Map.size.y;
             MapX = MapFile.Map.size.x;
