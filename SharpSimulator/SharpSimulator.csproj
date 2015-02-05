@@ -62,13 +62,21 @@
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
-    <None Include="Resources\Subway.json">
+    <EmbeddedResource Include="Resources\Tiles\black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\square.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Simulations\Subway.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Simulator\Entities\CivilianEntity.cs" />
@@ -81,6 +89,7 @@
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyMoveBehaviour.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\AEntity.cs" />
     <Compile Include="Simulator\Entities\EntityManager.cs" />
+    <Compile Include="Simulator\Factions\TestEntity.cs" />
     <Compile Include="Simulator\Factions\Faction.cs" />
     <Compile Include="Simulator\Factions\Interfaces\IFactionMember.cs" />
     <Compile Include="Test\CharacteristicsTest.cs" />
@@ -92,7 +101,7 @@
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Perception.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\Characteristics\Characteristic.cs" />
     <Compile Include="Test\FactionTest.cs" />
-    <Compile Include="Test\FactoryTest.cs" />
+    <Compile Include="Test\FactoryTestBis.cs" />
     <Compile Include="Utils\TextUtils.cs" />
     <Compile Include="Simulator\Behaviours\Interfaces\ITalkBehaviour.cs" />
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyTalkBehaviour.cs" />
@@ -111,7 +120,6 @@
     <Compile Include="Simulator\StateMachine\State\NoMapLoadedState.cs" />
     <Compile Include="Simulator\StateMachine\StateMachine.cs" />
     <Compile Include="Simulator\StateMachine\State\AbstractState.cs" />
-    <Compile Include="Simulator\Factory\GameEnv.cs" />
     <Compile Include="Simulator\Factory\Map\AbstractMap.cs" />
     <Compile Include="Simulator\Factory\Map\GameMap.cs" />
     <Compile Include="Simulator\Factory\Factory\AbstractFactory.cs" />
@@ -122,10 +130,18 @@
     <Compile Include="Simulator\Factory\Area\SubwayArea\Wall.cs" />
     <Compile Include="Simulator\Factory\Access\AbstractAccess.cs" />
     <Compile Include="Simulator\Factory\Access\SubwayAccess\ConcretAccess.cs" />
-    <Compile Include="Simulator\Factory\Access\SubwayAccess\Tunnel.cs" />
+    <Compile Include="Simulator\GUI\TilesProvider.cs" />
+    <Compile Include="Simulator\GUI\SpritesProvider.cs" />
+    <Compile Include="SimulatorWindow.cs" />
+    <Compile Include="gtk-gui\SharpSimulator.SimulatorWindow.cs" />
+    <Compile Include="Simulator\StateMachine\ConcreteStateMachine.cs" />
+    <Compile Include="Simulator\StateMachine\IStateMachine.cs" />
+    <Compile Include="Simulator\GUI\SimulationsProvider.cs" />
+    <Compile Include="Simulator\Factory\GameContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Folder Include="Resources\Sprites\" />
     <Folder Include="Simulator\Entities\EntityDefinition\Skill\" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SharpSimulator.Area
 {
-    class Wall:Frame
+    public class Wall:Frame
     {
         public Wall(int x = 0, int y = 0, string nameIn = "mur") : base(x, y, true, nameIn) {
         }

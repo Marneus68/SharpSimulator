@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SharpSimulator.Area
 {
-    abstract class AbstractArea
+    public abstract class AbstractArea
     {
-        internal int coordX;
-        internal int coordY;
-        internal string name;
-        internal bool blocked;
+        public int CoordX;
+		public int CoordY;
+        public string name;
+        public bool Blocked;
          string Name{set; get;}
     }
 }

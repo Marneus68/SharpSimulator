@@ -9,15 +9,24 @@ using SharpSimulator.Factory;
 
 namespace SharpSimulator.Map
 {
-     abstract class AbstractMap
-    {
-        internal AbstractArea[,] areaList;
-        internal AbstractAccess [,] accessList;
-        internal string [,] textures;
-        internal AbstractMapFactory mapFactory;
-        public abstract AbstractMap generateMap();
-        internal abstract void AddArea();
-        internal abstract void AddAccess();
-        internal abstract void AddTexture();
-    }
+     public abstract class AbstractMap
+     {
+         public string Description;
+         public string Name;
+         public int MapX;
+         public int MapY;
+         public int MapSize;
+         public AbstractArea[,] AreaList;
+         public List<AbstractAccess> AccessList;
+         public List<IFactionMember> EntityList;
+         public Dictionary<string, string> Actions;
+         public string[,] Textures;
+         public AbstractMapFactory MapFactory;
+         public abstract AbstractMap GenerateMap();
+         public abstract void AddArea();
+         public abstract void AddAccess();
+         public abstract void AddTexture();
+         public abstract void AddActions();
+         public abstract void AddEntities();
+     }
 }

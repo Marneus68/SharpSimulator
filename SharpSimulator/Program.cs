@@ -8,7 +8,7 @@ namespace SharpSimulator
 		public static void Main (string[] args)
 		{
 			Application.Init ();
-			MainWindow win = new MainWindow ();
+			SimulatorWindow win = new SimulatorWindow ();
 			win.Show ();
 			Application.Run ();
         }
