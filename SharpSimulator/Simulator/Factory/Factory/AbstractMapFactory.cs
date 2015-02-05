@@ -19,6 +19,7 @@ namespace SharpSimulator.Factory
         public dynamic MapFile;
         public int MapSize;
         abstract internal AbstractArea[,] GenerateArea();
+        abstract public void init(string filePath);
         abstract internal List<AbstractAccess> GenerateAccess();
         abstract internal string[,] GenerateTextures();
         abstract internal Dictionary<string, string> GenerateActions();

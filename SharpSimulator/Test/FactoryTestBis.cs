@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using SharpSimulator.Factory;
 
 namespace SharpSimulator.Test
 {
@@ -12,35 +13,29 @@ namespace SharpSimulator.Test
     {
         [Test()]
 		public void FactorySubwayTextures () {
-			/*
-            GameEnv env = new GameEnv();
-            env.initGame("test");
-			Assert.AreEqual ("black",env.gameMap.textures[2,3]);
-        	*/
+            GameContext env = new GameContext();
+            env.ChargeSimulation(new SubwayFactory(),"Subway.json");
+			Assert.AreEqual ("black",env.Map.Textures[1,3]);
         }
 
         [Test()]
         public void FactorySubwayActions()
         {
-			/*
-            GameEnv env = new GameEnv();
-            env.initGame("test");
+            GameContext env = new GameContext();
+            env.ChargeSimulation(new SubwayFactory(),"Subway.json");
             string testVal = null;
-            env.gameMap.actions.TryGetValue("Play", out testVal);
+            env.Map.Actions.TryGetValue("Play", out testVal);
             Assert.AreEqual("play", testVal);
-            */
         }
 
         [Test()]
         public void FactorySubwayEntity()
         {
-			/*
-            GameEnv env = new GameEnv();
-            env.initGame("test");
+            GameContext env = new GameContext();
+            env.ChargeSimulation(new SubwayFactory(),"Subway.json");
             string testVal = null;
-            TestEntity tempEntity = env.gameMap.entityList.ElementAt(0) as TestEntity;
+            TestEntity tempEntity = env.Map.EntityList.ElementAt(0) as TestEntity;
             Assert.AreEqual(typeof(TestEntity), tempEntity.GetType());
-            */
         }
     }
 }

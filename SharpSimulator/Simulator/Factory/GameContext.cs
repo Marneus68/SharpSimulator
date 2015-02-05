@@ -29,6 +29,7 @@ namespace SharpSimulator
 		// TODO
 		// Finish this method by creating the underlying options in the factories on the abstract level.
 		public void ChargeSimulation(AbstractMapFactory factoryIn, String jsonFilename) {
+            factoryIn.init(jsonFilename);
 			Map = CreateGameMap(factoryIn);
 		}
 

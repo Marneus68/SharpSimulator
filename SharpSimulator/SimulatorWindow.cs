@@ -43,7 +43,7 @@ namespace SharpSimulator
 
 		public void LoadMap(String jsonMapPath = "") {
 
-			context.ChargeSimulation (new Factory.SubwayFactory(), "sqlkdsqkjlklqjds");
+			context.ChargeSimulation (new Factory.SubwayFactory(), "Subway.json");
 
 			SimulationOverviewLabel.Editable = false;
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;
