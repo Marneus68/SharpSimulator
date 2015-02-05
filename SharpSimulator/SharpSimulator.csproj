@@ -74,6 +74,9 @@
     <EmbeddedResource Include="Resources\Simulations\Subway.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Icons\icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
@@ -143,6 +146,7 @@
   <ItemGroup>
     <Folder Include="Resources\Sprites\" />
     <Folder Include="Simulator\Entities\EntityDefinition\Skill\" />
+    <Folder Include="Resources\Icons\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -17,6 +17,9 @@ namespace SharpSimulator
 		public SimulatorWindow () : base (Gtk.WindowType.Toplevel) {
 			this.Build ();
 			context = new GameContext ();
+
+			SetIconFromFile ("./Resources/Icons/icon.ico");
+
 			Shared = this;
 			CurrentState = new NoMapLoadedState(this);
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
