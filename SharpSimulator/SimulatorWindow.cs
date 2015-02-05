@@ -22,6 +22,8 @@ namespace SharpSimulator
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
 			CurrentState.BuildButtonBar (MainButtonBox, mainMenuButtonList);
 
+			SimulationDebugLabelContainer.Add (GuiLogger.OutputWidget);
+
 			BuildMainView (CurrentState.BuildMainLayout());
 
 			this.ShowAll ();
@@ -44,6 +46,8 @@ namespace SharpSimulator
 		public void LoadMap(String jsonMapPath = "") {
 
 			context.ChargeSimulation (new Factory.SubwayFactory(), "Subway.json");
+
+			Logger.LogChain.Message ("Simulation loaded", Logger.Level.SIMULATION_NOTICE);
 
 			SimulationOverviewLabel.Editable = false;
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;

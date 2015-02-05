@@ -22,9 +22,7 @@ namespace SharpSimulator
 		
 		private global::Gtk.Notebook notebook1;
 		
-		private global::Gtk.ScrolledWindow GtkScrolledWindow1;
-		
-		private global::Gtk.TextView SimulationDebugLabel;
+		private global::Gtk.ScrolledWindow SimulationDebugLabelContainer;
 		
 		private global::Gtk.Label label1;
 		
@@ -110,20 +108,16 @@ namespace SharpSimulator
 			this.notebook1.Name = "notebook1";
 			this.notebook1.CurrentPage = 0;
 			// Container child notebook1.Gtk.Notebook+NotebookChild
-			this.GtkScrolledWindow1 = new global::Gtk.ScrolledWindow ();
-			this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
-			this.GtkScrolledWindow1.ShadowType = ((global::Gtk.ShadowType)(1));
-			// Container child GtkScrolledWindow1.Gtk.Container+ContainerChild
-			this.SimulationDebugLabel = new global::Gtk.TextView ();
-			this.SimulationDebugLabel.CanFocus = true;
-			this.SimulationDebugLabel.Name = "SimulationDebugLabel";
-			this.GtkScrolledWindow1.Add (this.SimulationDebugLabel);
-			this.notebook1.Add (this.GtkScrolledWindow1);
+			this.SimulationDebugLabelContainer = new global::Gtk.ScrolledWindow ();
+			this.SimulationDebugLabelContainer.CanFocus = true;
+			this.SimulationDebugLabelContainer.Name = "SimulationDebugLabelContainer";
+			this.SimulationDebugLabelContainer.ShadowType = ((global::Gtk.ShadowType)(1));
+			this.notebook1.Add (this.SimulationDebugLabelContainer);
 			// Notebook tab
 			this.label1 = new global::Gtk.Label ();
 			this.label1.Name = "label1";
 			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Simulator Debug");
-			this.notebook1.SetTabLabel (this.GtkScrolledWindow1, this.label1);
+			this.notebook1.SetTabLabel (this.SimulationDebugLabelContainer, this.label1);
 			this.label1.ShowAll ();
 			// Container child notebook1.Gtk.Notebook+NotebookChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
@@ -135,8 +129,8 @@ namespace SharpSimulator
 			this.EntityOverviewLabel.Name = "EntityOverviewLabel";
 			this.GtkScrolledWindow.Add (this.EntityOverviewLabel);
 			this.notebook1.Add (this.GtkScrolledWindow);
-			global::Gtk.Notebook.NotebookChild w12 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.GtkScrolledWindow]));
-			w12.Position = 1;
+			global::Gtk.Notebook.NotebookChild w11 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.GtkScrolledWindow]));
+			w11.Position = 1;
 			// Notebook tab
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
@@ -153,8 +147,8 @@ namespace SharpSimulator
 			this.SimulationOverviewLabel.Name = "SimulationOverviewLabel";
 			this.GtkScrolledWindow3.Add (this.SimulationOverviewLabel);
 			this.notebook1.Add (this.GtkScrolledWindow3);
-			global::Gtk.Notebook.NotebookChild w14 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.GtkScrolledWindow3]));
-			w14.Position = 2;
+			global::Gtk.Notebook.NotebookChild w13 = ((global::Gtk.Notebook.NotebookChild)(this.notebook1 [this.GtkScrolledWindow3]));
+			w13.Position = 2;
 			// Notebook tab
 			this.SimulationOverview = new global::Gtk.Label ();
 			this.SimulationOverview.Name = "SimulationOverview";
@@ -162,9 +156,9 @@ namespace SharpSimulator
 			this.notebook1.SetTabLabel (this.GtkScrolledWindow3, this.SimulationOverview);
 			this.SimulationOverview.ShowAll ();
 			this.vpaned1.Add (this.notebook1);
-			global::Gtk.Paned.PanedChild w15 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.notebook1]));
-			w15.Resize = false;
-			w15.Shrink = false;
+			global::Gtk.Paned.PanedChild w14 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.notebook1]));
+			w14.Resize = false;
+			w14.Shrink = false;
 			this.Add (this.vpaned1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

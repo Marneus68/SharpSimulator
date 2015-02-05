@@ -98,15 +98,17 @@
             <property name="CanFocus">True</property>
             <property name="CurrentPage">0</property>
             <child>
-              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
-                <property name="MemberName" />
+              <widget class="Gtk.ScrolledWindow" id="SimulationDebugLabelContainer">
+                <property name="MemberName">SimulationDebugLabelContainer</property>
+                <property name="CanFocus">True</property>
                 <property name="ShadowType">In</property>
                 <child>
-                  <widget class="Gtk.TextView" id="SimulationDebugLabel">
-                    <property name="MemberName">SimulationDebugLabel</property>
-                    <property name="CanFocus">True</property>
-                    <property name="ShowScrollbars">True</property>
-                    <property name="Text" translatable="yes" />
+                  <widget class="Gtk.Viewport" id="GtkViewport1">
+                    <property name="MemberName" />
+                    <property name="ShadowType">None</property>
+                    <child>
+                      <placeholder />
+                    </child>
                   </widget>
                 </child>
               </widget>
