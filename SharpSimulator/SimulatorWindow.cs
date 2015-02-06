@@ -12,6 +12,8 @@ namespace SharpSimulator
 		protected GameContext context;
 		protected AbstractState CurrentState;
 
+		protected Fixed MainFixedLayout;
+
 		List<Button> mainMenuButtonList;
 
 		public SimulatorWindow () : base (Gtk.WindowType.Toplevel) {
@@ -20,6 +22,10 @@ namespace SharpSimulator
 
 			SetIconFromFile ("./Resources/Icons/icon.ico");
 
+			MainFixedLayout = new Fixed ();
+
+			MainAlignement.Add (MainFixedLayout);
+
 			Shared = this;
 			CurrentState = new NoMapLoadedState(this);
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
@@ -27,7 +33,7 @@ namespace SharpSimulator
 
 			SimulationDebugLabelContainer.Add (GuiLogger.OutputWidget);
 
-			BuildMainView (CurrentState.BuildMainLayout());
+			//BuildMainView (CurrentState.BuildMainLayout());	
 
 			this.ShowAll ();
 		}
@@ -42,8 +48,31 @@ namespace SharpSimulator
 			}
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
 			CurrentState.BuildButtonBar (MainButtonBox, mainMenuButtonList);
-			BuildMainView (CurrentState.BuildMainLayout());
+			//BuildMainView (CurrentState.BuildMainLayout());
 			this.ShowAll ();
+		}
+
+		public void paintMap() {
+			foreach (var child in MainFixedLayout.Children) {
+				MainFixedLayout.Remove (child);
+			}
+			paintBackground ();
+			paintEntities ();
+		}
+
+		public void paintBackground() {
+			for (int row = 0; row < context.Textures.GetLength (0); row++) {
+				for (int col = 0; col < context.Textures.GetLength (1); col++) {
+					MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(TilesProvider.Tiles [context.Textures [row, col].Trim()]), row * TilesProvider.Size - 12, col * TilesProvider.Size);
+					ShowAll ();
+				}
+			}
+		}
+
+		public void paintEntities() {
+			foreach (var ent in context.EntityList) {
+
+			}
 		}
 
 		public void LoadMap(String jsonMapPath = "") {
@@ -56,6 +85,8 @@ namespace SharpSimulator
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;
 
 			CurrentState.LoadMap(jsonMapPath);
+
+			paintMap ();
 		}
 
 		public void UnloadMap() {

@@ -6,7 +6,9 @@ using Gtk;
 
 namespace SharpSimulator {
 	public class TilesProvider {
-	
+
+		public static readonly int Size = 16;
+
 		protected static string provider_name = "TilesProvider";
 
 		protected static string file_extention = @".png";
@@ -16,7 +18,7 @@ namespace SharpSimulator {
 
 		protected static Dictionary<string, Gtk.Image> tiles = null;
 
-		public Dictionary<string, Gtk.Image> Tiles {
+		public static Dictionary<string, Gtk.Image> Tiles {
 			get {
 				if (tiles == null)
 					tiles = new Dictionary<string, Gtk.Image> ();
@@ -40,7 +42,7 @@ namespace SharpSimulator {
 			try {
 				dirContent = Directory.GetFiles (path, "*.png");
 			} catch (Exception e) {
-				Logger.LogChain.Message ("[" + provider_name + "] Cannot find \"" + path + "\" or the folder is empty. [\" + e.Message + \"]\"", Logger.Level.SIMULATION_DEBUG);
+				Logger.LogChain.Message ("[" + provider_name + "] Cannot find \"" + path + "\" or the folder is empty. [\"" + e.Message + "\"]\"", Logger.Level.SIMULATION_DEBUG);
 				return;
 			}
 
