@@ -50,7 +50,6 @@ namespace SharpSimulator
 			}
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
 			CurrentState.BuildButtonBar (MainButtonBox, mainMenuButtonList);
-			//BuildMainView (CurrentState.BuildMainLayout());
 			this.ShowAll ();
 		}
 
@@ -63,8 +62,8 @@ namespace SharpSimulator
 			ShowAll ();
 		}
 
-			public void RepaintBackground() {
-				for (int row = 0; row < context.Textures.GetLength (0); row++) {
+		public void RepaintBackground() {
+			for (int row = 0; row < context.Textures.GetLength (0); row++) {
 				for (int col = 0; col < context.Textures.GetLength (1); col++) {
 					MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(TilesProvider.Tiles [context.Textures [row, col].Trim()]), row * TilesProvider.Size - Offset, col * TilesProvider.Size);
 				}
@@ -72,18 +71,13 @@ namespace SharpSimulator
 		}
 
 		public void RepaintEntities() {
-		
-			MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(SpritesProvider.Tiles ["man_m"]), 2 * TilesProvider.Size - Offset, 0 * TilesProvider.Size);
-
 			foreach (var ent in context.EntityList) {
-
+				MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(SpritesProvider.Tiles ["man_m"]), ent.x * TilesProvider.Size - Offset, ent.y * TilesProvider.Size);
 			}
 		}
 
 		public void LoadMap(String jsonMapPath = "") {
 			context.ChargeSimulation (new Factory.SubwayFactory(), "Subway.json");
-
-			Logger.LogChain.Message ("Simulation loaded", Logger.Level.SIMULATION_NOTICE);
 
 			SimulationOverviewLabel.Editable = false;
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;
@@ -91,6 +85,8 @@ namespace SharpSimulator
 			CurrentState.LoadMap(jsonMapPath);
 
 			Repaint ();
+
+			Logger.LogChain.Message ("Simulation loaded", Logger.Level.SIMULATION_NOTICE);
 		}
 
 		public void UnloadMap() {
@@ -98,6 +94,7 @@ namespace SharpSimulator
 				MainFixedLayout.Remove (child);
 			}
 			ShowAll ();
+			SimulationOverviewLabel.Buffer.Text = "";
 			CurrentState.UnloadMap();
 		}
 
