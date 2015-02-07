@@ -1,0 +1,107 @@
+﻿{
+	'Map':{ 
+		'name':'Chess Game',
+		'description':'Simulation emulating a chess game.',
+		'default_texture':"black_marble",
+		'default_entity':"SharpSimulator.CivilianEntity",
+		'actions': [
+			{"Play":"play"},
+			{"Pause":"pause"},
+			{"Next Step":"next_step"},
+			{"Stop Simulation":"stop_simulation"}
+		],
+		'size': {'x': 8, 'y': 8},
+		'access':[
+			{ from: {x: 1, y:0}, to: {x: 1, y: 1} },
+			{ from: {x: 1, y:1}, to: {x: 1, y: 0} }
+		],
+		'entities':[
+			{ 'name':"SharpSimulator.Pawn", coords:{x:0, y:6}, color:"black" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:1, y:6}, color:"black" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:2, y:6}, color:"black" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:3, y:6}, color:"black" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:4, y:6}, color:"black" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:5, y:6}, color:"black" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:6, y:6}, color:"black" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:7, y:6}, color:"black" },
+
+			{ 'name':"SharpSimulator.Rook", coords:{x:0, y:7}, color:"black" },
+			{ 'name':"SharpSimulator.Knight", coords:{x:1, y:7}, color:"black" },
+			{ 'name':"SharpSimulator.Bishop", coords:{x:2, y:7}, color:"black" },
+			{ 'name':"SharpSimulator.King", coords:{x:3, y:7}, color:"black" },
+			{ 'name':"SharpSimulator.Queen", coords:{x:4, y:7}, color:"black" },
+			{ 'name':"SharpSimulator.Bishop", coords:{x:5, y:7}, color:"black" },
+			{ 'name':"SharpSimulator.Knight", coords:{x:6, y:7}, color:"black" },
+			{ 'name':"SharpSimulator.Rook", coords:{x:7, y:7}, color:"black" },
+
+			{ 'name':"SharpSimulator.Pawn", coords:{x:0, y:1}, color:"white" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:1, y:1}, color:"white" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:2, y:1}, color:"white" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:3, y:1}, color:"white" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:4, y:1}, color:"white" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:5, y:1}, color:"white" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:6, y:1}, color:"white" },
+			{ 'name':"SharpSimulator.Pawn", coords:{x:7, y:1}, color:"white" },
+
+			{ 'name':"SharpSimulator.Rook", coords:{x:0, y:0}, color:"white" },
+			{ 'name':"SharpSimulator.Knight", coords:{x:1, y:0}, color:"white" },
+			{ 'name':"SharpSimulator.Bishop", coords:{x:2, y:0}, color:"white" },
+			{ 'name':"SharpSimulator.Queen", coords:{x:3, y:0}, color:"white" },
+			{ 'name':"SharpSimulator.King", coords:{x:4, y:0}, color:"white" },
+			{ 'name':"SharpSimulator.Bishop", coords:{x:5, y:0}, color:"white" },
+			{ 'name':"SharpSimulator.Knight", coords:{x:6, y:0}, color:"white" },
+			{ 'name':"SharpSimulator.Rook", coords:{x:7, y:0}, color:"white" }
+
+
+		],
+		 
+		 'frames': [
+
+         ],
+         'access':[
+                     { from: {x: 1, y:0}, to: {x: 1, y: 1} }
+         ],
+         'textures':[
+			{x:0, y:0, value:'white_marble'},
+			{x:2, y:0, value:'white_marble'},
+			{x:4, y:0, value:'white_marble'},
+			{x:6, y:0, value:'white_marble'},
+
+			{x:1, y:1, value:'white_marble'},
+			{x:3, y:1, value:'white_marble'},
+			{x:5, y:1, value:'white_marble'},
+			{x:7, y:1, value:'white_marble'},
+
+			{x:0, y:2, value:'white_marble'},
+			{x:2, y:2, value:'white_marble'},
+			{x:4, y:2, value:'white_marble'},
+			{x:6, y:2, value:'white_marble'},
+
+			{x:1, y:3, value:'white_marble'},
+			{x:3, y:3, value:'white_marble'},
+			{x:5, y:3, value:'white_marble'},
+			{x:7, y:3, value:'white_marble'},
+
+			{x:0, y:4, value:'white_marble'},
+			{x:2, y:4, value:'white_marble'},
+			{x:4, y:4, value:'white_marble'},
+			{x:6, y:4, value:'white_marble'},
+
+			{x:1, y:5, value:'white_marble'},
+			{x:3, y:5, value:'white_marble'},
+			{x:5, y:5, value:'white_marble'},
+			{x:7, y:5, value:'white_marble'},
+
+			{x:0, y:6, value:'white_marble'},
+			{x:2, y:6, value:'white_marble'},
+			{x:4, y:6, value:'white_marble'},
+			{x:6, y:6, value:'white_marble'},
+
+			{x:1, y:7, value:'white_marble'},
+			{x:3, y:7, value:'white_marble'},
+			{x:5, y:7, value:'white_marble'},
+			{x:7, y:7, value:'white_marble'}
+
+        ]
+	}
+}

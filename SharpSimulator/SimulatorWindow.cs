@@ -69,15 +69,26 @@ namespace SharpSimulator
 				}
 			}
 		}
-
+			
 		public void RepaintEntities() {
 			foreach (var ent in context.EntityList) {
-				MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(SpritesProvider.Tiles ["man_m"]), ent.x * TilesProvider.Size - Offset, ent.y * TilesProvider.Size);
+				MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(SpritesProvider.Tiles [ent.Skin]), ent.x * TilesProvider.Size - Offset, ent.y * TilesProvider.Size);
+			}
+		}
+
+		public void RepainPaperDolls() {
+			foreach (var ent in context.EntityList) {
+
 			}
 		}
 
 		public void LoadMap(String jsonMapPath = "") {
-			context.ChargeSimulation (new Factory.SubwayFactory(), "Subway.json");
+			Logger.LogChain.Message ("Loading " + jsonMapPath + ".json", Logger.Level.ALL);
+
+			if ("Subway" == jsonMapPath)
+				context.ChargeSimulation (new Factory.SubwayFactory(), jsonMapPath + ".json");
+			else if ("Chess" == jsonMapPath)
+				context.ChargeSimulation (new Factory.ChessFactory(), jsonMapPath + ".json");
 
 			SimulationOverviewLabel.Editable = false;
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;

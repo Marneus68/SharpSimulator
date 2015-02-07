@@ -116,6 +116,57 @@
     <EmbeddedResource Include="Resources\Tiles\concrete_mark_reversed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\portique.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\portique_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Simulations\Chess.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\black_marble.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Tiles\white_marble.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\black_king.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\black_pawn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\black_queen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\white_king.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\white_pawn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\white_queen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\black_rook.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\white_rook.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\white_bishop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\black_bishop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\black_knight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sprites\white_knight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
@@ -165,7 +216,6 @@
     <Compile Include="Simulator\Factory\Map\GameMap.cs" />
     <Compile Include="Simulator\Factory\Factory\AbstractFactory.cs" />
     <Compile Include="Simulator\Factory\Factory\AbstractMapFactory.cs" />
-    <Compile Include="Simulator\Factory\Factory\SubwayFactory\SubwayFactory.cs" />
     <Compile Include="Simulator\Factory\Area\AbstractArea.cs" />
     <Compile Include="Simulator\Factory\Area\Frame.cs" />
     <Compile Include="Simulator\Factory\Area\SubwayArea\Wall.cs" />
@@ -180,12 +230,22 @@
     <Compile Include="Simulator\GUI\SimulationsProvider.cs" />
     <Compile Include="Simulator\Factory\GameContext.cs" />
     <Compile Include="Simulator\GUI\Extentions.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Chess\ChessPiece.cs" />
+    <Compile Include="Simulator\Factory\Factory\SubwayFactory.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Chess\Pawn.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Chess\King.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Chess\Queen.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Chess\Rook.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Chess\Bishop.cs" />
+    <Compile Include="Simulator\Entities\EntityDefinition\Chess\Knight.cs" />
+    <Compile Include="Simulator\Factory\Factory\ChessFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Resources\Sprites\" />
     <Folder Include="Simulator\Entities\EntityDefinition\Skill\" />
     <Folder Include="Resources\Icons\" />
+    <Folder Include="Simulator\Entities\EntityDefinition\Chess\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

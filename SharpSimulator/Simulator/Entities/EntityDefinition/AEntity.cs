@@ -12,6 +12,8 @@ namespace SharpSimulator {
 
 		public string 	Nickname {get; protected set;}
 
+		public string	Skin = "man_m";
+
 		public uint 	StructurePoints {get; protected set;}
 
 		public Strength		STR {get; protected set;} // Strength
