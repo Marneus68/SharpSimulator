@@ -21,12 +21,19 @@ namespace SharpSimulator {
 		public Charisma		CHA {get; protected set;} // Charisma
 		public Perception	PER {get; protected set;} // Perception
 
+		public int x; 
+		public int y;
+
 		protected Faction faction = null;
 		public Faction Faction { 
 			get { return faction; } 
 			set{ faction = value; Update (); }
 		}
 		public Dictionary<string, Faction.Relation> Relationships;
+
+		public AEntity() : this(null, "Random", "Peon", "") {
+
+		}
 
 		public AEntity (Faction faction = null, string fname = "Random", string lname = "Peon", string nick = "") {
 			FirstName			= fname;

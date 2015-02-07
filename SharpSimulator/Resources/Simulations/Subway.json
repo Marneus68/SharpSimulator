@@ -3,7 +3,7 @@
 		'name':'Subway',
 		'description':'Simulation taking place in the subway tunels during comute.',
 		'default_texture':'black',
-		'default_entity':'CivilianEntity',
+		'default_entity':"SharpSimulator.CivilianEntity",
 		'actions': [
 			{"Previous Step":"previous_step"},
 			{"Play":"play"},
@@ -17,46 +17,46 @@
 			{ from: {x: 1, y:1}, to: {x: 1, y: 0} }
 		],
 		'entities':[
-			{ 'name':"SharpSimulator.TestEntity", coords:{x:1, y:2}}
+			{ 'name':"SharpSimulator.CivilianEntity", coords:{x:1, y:2}}
 		],
 		 
 		 'frames': [
-                      {x:0, y:0, blocked:true},
-                      {x:0, y:1, blocked:true},
-                      {x:0, y:2, blocked:true},
-                      {x:0, y:3, blocked:true},
-                      {x:1, y:0, blocked:false},
-                      {x:1, y:1, blocked:false},
-                      {x:1, y:2, blocked:false},
-                      {x:1, y:3, blocked:true},
-                      {x:2, y:0, blocked:true},
-                      {x:2, y:1, blocked:true},
-                      {x:2, y:2, blocked:false},
-                      {x:2, y:3, blocked:true},
-                      {x:3, y:0, blocked:true},
-                      {x:3, y:1, blocked:true},
-                      {x:3, y:2, blocked:false},
-                      {x:3, y:3, blocked:true}
+			  {x:0, y:0, blocked:true},
+			  {x:0, y:1, blocked:true},
+			  {x:0, y:2, blocked:true},
+			  {x:0, y:3, blocked:true},
+			  {x:1, y:0, blocked:false},
+			  {x:1, y:1, blocked:false},
+			  {x:1, y:2, blocked:false},
+			  {x:1, y:3, blocked:true},
+			  {x:2, y:0, blocked:true},
+			  {x:2, y:1, blocked:true},
+			  {x:2, y:2, blocked:false},
+			  {x:2, y:3, blocked:true},
+			  {x:3, y:0, blocked:true},
+			  {x:3, y:1, blocked:true},
+			  {x:3, y:2, blocked:false},
+			  {x:3, y:3, blocked:true}
          ],
          'access':[
                      { from: {x: 1, y:0}, to: {x: 1, y: 1} }
          ],
          'textures':[
-                                            {x:0, y:0, value:'black'},
-                                            {x:0, y:1, value:'black'},
-                                            {x:0, y:2, value:'black'},
-                                            {x:0, y:3, value:'black'},
-                                            {x:1, y:0, value:'white'},
-                                            {x:1, y:1, value:'white'},
-                                            {x:1, y:2, value:'white'},
-                                            {x:2, y:0, value:'black'},
-                                            {x:2, y:1, value:'black'},
-                                            {x:2, y:2, value:'white'},
-                                            {x:2, y:3, value:'black'},
-                                            {x:3, y:0, value:'black'},
-                                            {x:3, y:1, value:'black'},
-                                            {x:3, y:2, value:'white'},
-                                            {x:3, y:3, value:'black'},
+				{x:0, y:0, value:'black'},
+				{x:0, y:1, value:'black'},
+				{x:0, y:2, value:'black'},
+				{x:0, y:3, value:'black'},
+				{x:1, y:0, value:'white'},
+				{x:1, y:1, value:'white'},
+				{x:1, y:2, value:'white'},
+				{x:2, y:0, value:'black'},
+				{x:2, y:1, value:'black'},
+				{x:2, y:2, value:'white'},
+				{x:2, y:3, value:'black'},
+				{x:3, y:0, value:'black'},
+				{x:3, y:1, value:'black'},
+				{x:3, y:2, value:'white'},
+				{x:3, y:3, value:'black'},
         ]
 	}
 }

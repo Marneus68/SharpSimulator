@@ -68,6 +68,7 @@ namespace SharpSimulator.Factory {
 
                     }catch(Exception e){
                         // block the default frame because decor
+
                         areas[x, y] = new Frame(x, y, true);
                     }
                 }
@@ -122,17 +123,17 @@ namespace SharpSimulator.Factory {
             }
             return actions;
         }
-        internal override List<IFactionMember> GenerateEntities()
+		internal override List<AEntity> GenerateEntities()
         {
-            List<IFactionMember> entities = new List<IFactionMember>();
+			List<AEntity> entities = new List<AEntity>();
             int entitiesLength = ((JArray)MapFile.Map.entities).Count;
             for (int i = 0; i < entitiesLength; i++)
             {
                 string entityClassName = MapFile.Map.entities[i].name;
                 int x = MapFile.Map.entities[i].coords.x;
                 int y = MapFile.Map.entities[i].coords.y; 
-                IFactionMember entityInstance = (IFactionMember)Activator.CreateInstance(Type.GetType(entityClassName), "test");
-                TestEntity tmptrueType = entityInstance as TestEntity;
+				AEntity entityInstance = (AEntity)Activator.CreateInstance(Type.GetType(entityClassName));
+				AEntity tmptrueType = entityInstance as AEntity;
                 tmptrueType.x = x;
                 tmptrueType.y = y;
                 entities.Add(entityInstance);

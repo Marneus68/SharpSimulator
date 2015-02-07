@@ -14,6 +14,8 @@ namespace SharpSimulator
 
 		protected Fixed MainFixedLayout;
 
+		protected int Offset = 12;
+
 		List<Button> mainMenuButtonList;
 
 		public SimulatorWindow () : base (Gtk.WindowType.Toplevel) {
@@ -52,31 +54,33 @@ namespace SharpSimulator
 			this.ShowAll ();
 		}
 
-		public void paintMap() {
+		public void Repaint() {
 			foreach (var child in MainFixedLayout.Children) {
 				MainFixedLayout.Remove (child);
 			}
-			paintBackground ();
-			paintEntities ();
+			RepaintBackground ();
+			RepaintEntities ();
+			ShowAll ();
 		}
 
-		public void paintBackground() {
-			for (int row = 0; row < context.Textures.GetLength (0); row++) {
+			public void RepaintBackground() {
+				for (int row = 0; row < context.Textures.GetLength (0); row++) {
 				for (int col = 0; col < context.Textures.GetLength (1); col++) {
-					MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(TilesProvider.Tiles [context.Textures [row, col].Trim()]), row * TilesProvider.Size - 12, col * TilesProvider.Size);
-					ShowAll ();
+					MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(TilesProvider.Tiles [context.Textures [row, col].Trim()]), row * TilesProvider.Size - Offset, col * TilesProvider.Size);
 				}
 			}
 		}
 
-		public void paintEntities() {
+		public void RepaintEntities() {
+		
+			MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(SpritesProvider.Tiles ["man_m"]), 2 * TilesProvider.Size - Offset, 0 * TilesProvider.Size);
+
 			foreach (var ent in context.EntityList) {
 
 			}
 		}
 
 		public void LoadMap(String jsonMapPath = "") {
-
 			context.ChargeSimulation (new Factory.SubwayFactory(), "Subway.json");
 
 			Logger.LogChain.Message ("Simulation loaded", Logger.Level.SIMULATION_NOTICE);
@@ -86,10 +90,14 @@ namespace SharpSimulator
 
 			CurrentState.LoadMap(jsonMapPath);
 
-			paintMap ();
+			Repaint ();
 		}
 
 		public void UnloadMap() {
+			foreach (var child in MainFixedLayout.Children) {
+				MainFixedLayout.Remove (child);
+			}
+			ShowAll ();
 			CurrentState.UnloadMap();
 		}
 

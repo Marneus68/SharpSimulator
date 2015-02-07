@@ -15,8 +15,6 @@ namespace SharpSimulator
 		}
 
 		public override List<Button> ButtonsForBar(SimulatorWindow window) {
-			TilesProvider tp = new TilesProvider ();
-
 			var ret = new List<Button> ();
 			SimulationsProvider sp = new SimulationsProvider ();
 		

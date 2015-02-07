@@ -18,7 +18,7 @@ namespace SharpSimulator.Map
          public int MapSize;
          public AbstractArea[,] AreaList;
          public List<AbstractAccess> AccessList;
-         public List<IFactionMember> EntityList;
+		public List<AEntity> EntityList;
          public Dictionary<string, string> Actions;
          public string[,] Textures;
          public AbstractMapFactory MapFactory;

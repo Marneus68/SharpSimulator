@@ -23,6 +23,6 @@ namespace SharpSimulator.Factory
         abstract internal List<AbstractAccess> GenerateAccess();
         abstract internal string[,] GenerateTextures();
         abstract internal Dictionary<string, string> GenerateActions();
-        abstract internal List<IFactionMember> GenerateEntities();
+		abstract internal List<AEntity> GenerateEntities();
     }
 }

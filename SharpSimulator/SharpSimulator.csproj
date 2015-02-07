@@ -104,7 +104,6 @@
     <Compile Include="Simulator\Behaviours\DummyBehaviours\DummyMoveBehaviour.cs" />
     <Compile Include="Simulator\Entities\EntityDefinition\AEntity.cs" />
     <Compile Include="Simulator\Entities\EntityManager.cs" />
-    <Compile Include="Simulator\Factions\TestEntity.cs" />
     <Compile Include="Simulator\Factions\Faction.cs" />
     <Compile Include="Simulator\Factions\Interfaces\IFactionMember.cs" />
     <Compile Include="Test\CharacteristicsTest.cs" />
