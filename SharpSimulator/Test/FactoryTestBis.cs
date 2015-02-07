@@ -33,8 +33,8 @@ namespace SharpSimulator.Test
         {
             GameContext env = new GameContext();
             env.ChargeSimulation(new SubwayFactory(),"Subway.json");
-            TestEntity tempEntity = env.EntityList.ElementAt(0) as TestEntity;
-            Assert.AreEqual(typeof(TestEntity), tempEntity.GetType());
+			AEntity tempEntity = env.EntityList.ElementAt(0) as AEntity;
+			Assert.AreEqual(typeof(AEntity), tempEntity.GetType());
         }
     }
 }

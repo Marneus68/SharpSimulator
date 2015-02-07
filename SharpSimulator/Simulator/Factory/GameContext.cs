@@ -17,7 +17,7 @@ namespace SharpSimulator {
 		public String 						MapSize 	{get {return map.MapSize.ToString();}}
 		public Area.AbstractArea[,] 		AreaList 	{get {return map.AreaList;}}
 		public List<Access.AbstractAccess> 	AccessList 	{get {return map.AccessList;}}
-		public List<IFactionMember> 		EntityList 	{get {return map.EntityList;}}
+		public List<AEntity> 		EntityList 	{get {return map.EntityList;}}
 		public Dictionary<string, string> 	Actions 	{get {return map.Actions;}}
 		public string[,] 					Textures 	{get {return map.Textures;}}
 

@@ -12,11 +12,22 @@ namespace SharpSimulator
 		protected GameContext context;
 		protected AbstractState CurrentState;
 
+		protected Fixed MainFixedLayout;
+
+		protected int Offset = 12;
+
 		List<Button> mainMenuButtonList;
 
 		public SimulatorWindow () : base (Gtk.WindowType.Toplevel) {
 			this.Build ();
 			context = new GameContext ();
+
+			SetIconFromFile ("./Resources/Icons/icon.ico");
+
+			MainFixedLayout = new Fixed ();
+
+			MainAlignement.Add (MainFixedLayout);
+
 			Shared = this;
 			CurrentState = new NoMapLoadedState(this);
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
@@ -24,7 +35,7 @@ namespace SharpSimulator
 
 			SimulationDebugLabelContainer.Add (GuiLogger.OutputWidget);
 
-			BuildMainView (CurrentState.BuildMainLayout());
+			//BuildMainView (CurrentState.BuildMainLayout());	
 
 			this.ShowAll ();
 		}
@@ -39,23 +50,62 @@ namespace SharpSimulator
 			}
 			mainMenuButtonList = CurrentState.ButtonsForBar (this);
 			CurrentState.BuildButtonBar (MainButtonBox, mainMenuButtonList);
-			BuildMainView (CurrentState.BuildMainLayout());
 			this.ShowAll ();
 		}
 
+		public void Repaint() {
+			foreach (var child in MainFixedLayout.Children) {
+				MainFixedLayout.Remove (child);
+			}
+			RepaintBackground ();
+			RepaintEntities ();
+			ShowAll ();
+		}
+
+		public void RepaintBackground() {
+			for (int row = 0; row < context.Textures.GetLength (0); row++) {
+				for (int col = 0; col < context.Textures.GetLength (1); col++) {
+					MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(TilesProvider.Tiles [context.Textures [row, col].Trim()]), row * TilesProvider.Size - Offset, col * TilesProvider.Size);
+				}
+			}
+		}
+			
+		public void RepaintEntities() {
+			foreach (var ent in context.EntityList) {
+				MainFixedLayout.Put (GtkWidgetExtensions.Extensions.Clone(SpritesProvider.Tiles [ent.Skin]), ent.x * TilesProvider.Size - Offset, ent.y * TilesProvider.Size);
+			}
+		}
+
+		public void RepainPaperDolls() {
+			foreach (var ent in context.EntityList) {
+
+			}
+		}
+
 		public void LoadMap(String jsonMapPath = "") {
+			Logger.LogChain.Message ("Loading " + jsonMapPath + ".json", Logger.Level.ALL);
 
-			context.ChargeSimulation (new Factory.SubwayFactory(), "Subway.json");
-
-			Logger.LogChain.Message ("Simulation loaded", Logger.Level.SIMULATION_NOTICE);
+			if ("Subway" == jsonMapPath)
+				context.ChargeSimulation (new Factory.SubwayFactory(), jsonMapPath + ".json");
+			else if ("Chess" == jsonMapPath)
+				context.ChargeSimulation (new Factory.ChessFactory(), jsonMapPath + ".json");
 
 			SimulationOverviewLabel.Editable = false;
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;
 
 			CurrentState.LoadMap(jsonMapPath);
+
+			Repaint ();
+
+			Logger.LogChain.Message ("Simulation loaded", Logger.Level.SIMULATION_NOTICE);
 		}
 
 		public void UnloadMap() {
+			foreach (var child in MainFixedLayout.Children) {
+				MainFixedLayout.Remove (child);
+			}
+			ShowAll ();
+			SimulationOverviewLabel.Buffer.Text = "";
 			CurrentState.UnloadMap();
 		}
 
@@ -65,10 +115,12 @@ namespace SharpSimulator
 
 		public void NextStep() {
 			CurrentState.NextStep();
+			Repaint ();
 		}
 
 		public void PreviousStep() {
 			CurrentState.PreviousStep();
+			Repaint ();
 		}
 
 		public void Pause() {
