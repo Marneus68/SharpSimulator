@@ -1,3 +1,5 @@
+![icon](https://raw.githubusercontent.com/Marneus68/SharpSimulator/gui/icon.png?token=AA1m4ZR07XkF5dJvIR_Q31DvCDr1pRQxks5U36oSwA%3D%3D "SharpSimulator Icon")
+
 # SharpSimulator
 
 ## Builing
