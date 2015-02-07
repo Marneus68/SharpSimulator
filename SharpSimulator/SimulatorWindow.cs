@@ -104,10 +104,12 @@ namespace SharpSimulator
 
 		public void NextStep() {
 			CurrentState.NextStep();
+			Repaint ();
 		}
 
 		public void PreviousStep() {
 			CurrentState.PreviousStep();
+			Repaint ();
 		}
 
 		public void Pause() {
