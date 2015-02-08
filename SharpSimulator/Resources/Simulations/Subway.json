@@ -17,7 +17,18 @@
 			{ from: {x: 1, y:1}, to: {x: 1, y: 0} }
 		],
 		'entities':[
-			{ 'name':"SharpSimulator.CivilianEntity", coords:{x:1, y:2}}
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:6}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:7}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:8}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:9}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:10}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:11}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:12}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:13}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:14}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:15}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:16}},
+			{ 'name':"SharpSimulator.Commuter", coords:{x:0, y:17}},
 		],
 		 
 		 'frames': [
