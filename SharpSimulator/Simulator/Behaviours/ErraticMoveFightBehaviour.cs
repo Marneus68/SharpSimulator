@@ -2,7 +2,7 @@
 
 namespace SharpSimulator
 {
-	public class ErraticMoveFightBehaviour
+	public class ErraticMoveFightBehaviour : IMoveBehaviour
 	{
 		protected static readonly Random Random;
 

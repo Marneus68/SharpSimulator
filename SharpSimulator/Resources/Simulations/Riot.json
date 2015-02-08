@@ -12,6 +12,7 @@
 		],
 		'size': {'x': 20, 'y': 20},
 		'access':[
+			{ from: {x: 1, y:1}, to: {x: 1, y: 0} }
 		],
 		'entities':[
 			{ 'name':"SharpSimulator.Striker", coords:{x:12, y:4}},
