@@ -13,6 +13,10 @@ namespace SharpSimulator
 			TalkBehaviour = (ITalkBehaviour) new DummyTalkBehaviour ();
 			DisplayBehaviour = (IDisplayBehaviour) new DummyDisplayBehaviour ();
 		}
+
+		override public void Step() {
+
+		}
 	}
 }
 

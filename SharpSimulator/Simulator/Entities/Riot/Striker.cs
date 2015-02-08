@@ -5,9 +5,14 @@ namespace SharpSimulator {
 		public Striker () : base (null, "", "", "Striker") {
 			Skin = "striker";
 			FightBehaviour = (IFightBehaviour) new DummyFightBehaviour ();
-			MoveBehaviour = (IMoveBehaviour) new DummyMoveBehaviour ();
-			TalkBehaviour = (ITalkBehaviour) new DummyTalkBehaviour ();
+			MoveBehaviour = (IMoveBehaviour) new ErraticMoveBehaviour ();
+			TalkBehaviour = (ITalkBehaviour) new StrikerTalkBehaviour ();
 			DisplayBehaviour = (IDisplayBehaviour) new DummyDisplayBehaviour ();
+		}
+
+		override public void Step() {
+			Move ();
+			Talk ();
 		}
 	}
 }

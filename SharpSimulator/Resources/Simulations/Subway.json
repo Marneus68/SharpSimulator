@@ -7,7 +7,6 @@
 		'actions': [
 			{"Previous Step":"previous_step"},
 			{"Play":"play"},
-			{"Pause":"pause"},
 			{"Next Step":"next_step"},
 			{"Stop Simulation":"stop_simulation"}
 		],

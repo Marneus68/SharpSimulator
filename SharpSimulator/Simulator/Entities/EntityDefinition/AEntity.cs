@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace SharpSimulator {
 	public abstract class AEntity : IFactionMember {
-		public IFightBehaviour		FightBehaviour {get; set;}
-		public IMoveBehaviour		MoveBehaviour {get; set;}
-		public ITalkBehaviour		TalkBehaviour {get; set;}
-		public IDisplayBehaviour	DisplayBehaviour {get; set;}
+		public IFightBehaviour		FightBehaviour		{get; set;}
+		public IMoveBehaviour		MoveBehaviour		{get; set;}
+		public ITalkBehaviour		TalkBehaviour		{get; set;}
+		public IDisplayBehaviour	DisplayBehaviour	{get; set;}
 		public string 	FirstName {get; protected set;}
 		public string 	LastName {get; protected set;}
 
@@ -71,7 +71,7 @@ namespace SharpSimulator {
 
 		public void Move () {
 			if (MoveBehaviour != null) {
-				MoveBehaviour.Move ();
+				MoveBehaviour.Move (this);
 			}
 		}
 
@@ -87,6 +87,8 @@ namespace SharpSimulator {
 				DisplayBehaviour.Display ();
 			}
 		}
+
+		public abstract void Step ();
 
 		public void Update () {
 			if (Faction != null)

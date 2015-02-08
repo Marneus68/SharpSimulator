@@ -86,11 +86,13 @@ namespace SharpSimulator
 			Logger.LogChain.Message ("Loading " + jsonMapPath + ".json", Logger.Level.ALL);
 
 			if ("Subway" == jsonMapPath)
-				context.ChargeSimulation (new Factory.SubwayFactory(), jsonMapPath + ".json");
+				context.ChargeSimulation (new Factory.SubwayFactory (), jsonMapPath + ".json");
 			else if ("Chess" == jsonMapPath)
-				context.ChargeSimulation (new Factory.ChessFactory(), jsonMapPath + ".json");
-			else if ("Riot" == jsonMapPath) 
-				context.ChargeSimulation (new Factory.SubwayFactory(), jsonMapPath + ".json");
+				context.ChargeSimulation (new Factory.ChessFactory (), jsonMapPath + ".json");
+			else if ("Riot" == jsonMapPath)
+				context.ChargeSimulation (new Factory.SubwayFactory (), jsonMapPath + ".json");
+			else
+				context.ChargeSimulation (new Factory.SubwayFactory (), jsonMapPath + ".json");
 
 			SimulationOverviewLabel.Editable = false;
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;
@@ -117,11 +119,16 @@ namespace SharpSimulator
 
 		public void NextStep() {
 			CurrentState.NextStep();
+			//context.Faction.Step ();
+			foreach (var e in context.EntityList) {
+				e.Step ();
+			}
 			Repaint ();
 		}
 
 		public void PreviousStep() {
 			CurrentState.PreviousStep();
+			//context.Faction.Step ();
 			Repaint ();
 		}
 

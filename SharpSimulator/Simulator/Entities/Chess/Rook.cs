@@ -6,6 +6,10 @@ namespace SharpSimulator {
 			PieceType = "Rook";
 			ConstructPiece (color);
 		}
+
+		override public void Step() {
+
+		}
 	}
 }
 

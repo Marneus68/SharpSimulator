@@ -3,7 +3,7 @@
 namespace SharpSimulator
 {
 	public interface IMoveBehaviour {
-		void Move();
+		void Move(AEntity entity);
 	}
 }
 
