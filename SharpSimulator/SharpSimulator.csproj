@@ -276,6 +276,10 @@
     <Compile Include="Simulator\Entities\Riot\Breaker.cs" />
     <Compile Include="Simulator\Entities\Riot\Policeman.cs" />
     <Compile Include="Simulator\Entities\Subway\Commuter.cs" />
+    <Compile Include="Simulator\Behaviours\ErraticMoveBehaviour.cs" />
+    <Compile Include="Simulator\Behaviours\ErraticMoveFightBehaviour.cs" />
+    <Compile Include="Simulator\Behaviours\BreakerTalkBehaviour.cs" />
+    <Compile Include="Simulator\Behaviours\StrikerTalkBehaviour.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

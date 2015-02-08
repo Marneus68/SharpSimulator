@@ -60,13 +60,13 @@ namespace SharpSimulator
 				var tmp_btn = new Button (s.Key);
 
 				switch (s.Value) {
-				case "previous_step":
+					case "previous_step":
 						tmp_btn.Clicked += new EventHandler (SimulatorWindow.previous_step);
 						break;
 					case "play":
 						tmp_btn.Clicked += new EventHandler (SimulatorWindow.play);
 						break;
-					case "next_stop":
+					case "next_step":
 						tmp_btn.Clicked += new EventHandler (SimulatorWindow.next_step);
 						break;
 					case "stop_simulation":

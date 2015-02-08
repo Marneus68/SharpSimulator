@@ -5,9 +5,13 @@ namespace SharpSimulator {
 		public Policeman () : base (null, "", "", "Policeman") {
 			Skin = "policeman";
 			FightBehaviour = (IFightBehaviour) new DummyFightBehaviour ();
-			MoveBehaviour = (IMoveBehaviour) new DummyMoveBehaviour ();
+			MoveBehaviour = (IMoveBehaviour) new ErraticMoveFightBehaviour ();
 			TalkBehaviour = (ITalkBehaviour) new DummyTalkBehaviour ();
 			DisplayBehaviour = (IDisplayBehaviour) new DummyDisplayBehaviour ();
+		}
+
+		override public void Step() {
+			Move ();
 		}
 	}
 }

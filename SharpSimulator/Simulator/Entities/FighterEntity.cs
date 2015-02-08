@@ -14,6 +14,10 @@ namespace SharpSimulator {
 
 			StructurePoints = 8;
 		}
+
+		override public void Step() {
+
+		}
 	}
 }
 

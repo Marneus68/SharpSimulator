@@ -26,11 +26,12 @@ namespace SharpSimulator {
 			Name = name;
 			members = new List<IFactionMember> ();
 
-			AddToFactionsList ();
+			//AddToFactionsList ();
 		}
 
 		~Faction() {
 			Console.WriteLine ("Destructor called for Faction {0}", this.Name);
+			/*
 			if (FactionsList != null) {
 				foreach (var f in FactionsList) {
 					if (f.Name == Name) {
@@ -38,8 +39,10 @@ namespace SharpSimulator {
 					}
 				}
 			}
+			*/
 		}
 
+		/*
 		protected void AddToFactionsList() {
 			if (FactionsList == null)
 				FactionsList = new List<Faction> ();
@@ -47,6 +50,7 @@ namespace SharpSimulator {
 
 			UpdateAllFactionsRelationships ();
 		}
+		*/
 
 		public void SetRelashionship(string faction_name, Relation relation) {
 			if (faction_name == this.Name)
@@ -67,27 +71,12 @@ namespace SharpSimulator {
 		public void UpdateRelationships() {
 			if (Relationships == null)
 				Relationships = new Dictionary<string, Relation> ();
-			if (FactionsList == null) {
-				FactionsList = new List<Faction> ();
-				return;
-			}
-			foreach (var f in FactionsList) {
-				if (!Relationships.ContainsKey (f.Name)) {
-					Relationships.Add (f.Name, Relation.IGNORANCE);
-				}
-			}
 			Update ();
 		}
 
 		//public static void UpdateAllFactionsRelationships() {
 		public void UpdateAllFactionsRelationships() {
-			if (FactionsList == null) {
-				FactionsList = new List<Faction> ();
-				return;
-			}
-			foreach(var f in FactionsList) {
-				f.UpdateRelationships ();
-			}
+
 		}
 
 		public void Attach(IFactionMember member) {
@@ -102,6 +91,22 @@ namespace SharpSimulator {
 			foreach (var member in members) {
 				member.Update ();
 			}
+		}
+
+		public void Step() {
+			foreach (var member in members) {
+				member.Step ();
+			}
+		}
+
+		public bool CheckForEntityCollision(int x, int y) {
+			foreach (var member in members) {
+				if (member is AEntity) {
+					if (((AEntity)member).x == x && ((AEntity)member).y == y)
+						return true;
+				}
+			}
+			return false;
 		}
 	}
 }
