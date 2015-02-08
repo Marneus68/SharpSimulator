@@ -89,8 +89,8 @@ namespace SharpSimulator
 				context.ChargeSimulation (new Factory.SubwayFactory(), jsonMapPath + ".json");
 			else if ("Chess" == jsonMapPath)
 				context.ChargeSimulation (new Factory.ChessFactory(), jsonMapPath + ".json");
-			//else 
-				//context
+			else if ("Riot" == jsonMapPath) 
+				context.ChargeSimulation (new Factory.SubwayFactory(), jsonMapPath + ".json");
 
 			SimulationOverviewLabel.Editable = false;
 			SimulationOverviewLabel.Buffer.Text = "Simulation Name: " + context.Name + "\nSimulation Description: " + context.Description;
