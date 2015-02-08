@@ -51,8 +51,6 @@
 			{ 'name':"SharpSimulator.Bishop", coords:{x:5, y:0}, color:"white" },
 			{ 'name':"SharpSimulator.Knight", coords:{x:6, y:0}, color:"white" },
 			{ 'name':"SharpSimulator.Rook", coords:{x:7, y:0}, color:"white" }
-
-
 		],
 		 
 		 'frames': [
