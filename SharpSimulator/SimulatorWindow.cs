@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 
 using Gtk;
@@ -16,7 +18,9 @@ namespace SharpSimulator
 
 		protected int Offset = 12;
 
-		List<Button> mainMenuButtonList;
+		List<Button> mainMenuButtonList; 
+
+		protected static Action<Task> action = null;
 
 		public SimulatorWindow () : base (Gtk.WindowType.Toplevel) {
 			this.Build ();
@@ -138,6 +142,10 @@ namespace SharpSimulator
 
 		public void Play() {
 			CurrentState.Play();
+
+			//	while
+			//		wait 1 second
+			//		next step
 		}
 
 		public void NewEntity() {
@@ -168,12 +176,24 @@ namespace SharpSimulator
 			Shared.UnloadMap ();
 		}
 
+		protected static uint timerID = 0;
+
 		public static void play(object obj, EventArgs args) {
 			Shared.Play ();
+
+			timerID = GLib.Timeout.Add (2000, new GLib.TimeoutHandler (play_step));
+		}
+
+		protected static bool play_step() {
+			//Logger.LogChain.Message ("lel", Logger.Level.ALL);
+			Shared.NextStep ();
+			return true;
 		}
 
 		public static void pause(object obj, EventArgs args) {
 			Shared.Pause ();
+
+			GLib.Source.Remove (timerID);
 		}
 
 		public static void next_step(object obj, EventArgs args) {
