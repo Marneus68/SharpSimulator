@@ -8,7 +8,7 @@ namespace SharpSimulator {
 		}
 
 		override public void Step() {
-
+			Move ();
 		}
 	}
 }

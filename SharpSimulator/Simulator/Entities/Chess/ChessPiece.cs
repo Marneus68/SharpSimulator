@@ -47,7 +47,7 @@ namespace SharpSimulator
 
 		public ChessPiece (Faction _faction = null, string fname = "Chess", string lname = "Piece", string nick = "") : base(_faction, fname, lname, nick) {
 			FightBehaviour = (IFightBehaviour) new DummyFightBehaviour ();
-			MoveBehaviour = (IMoveBehaviour) new DummyMoveBehaviour ();
+			MoveBehaviour = (IMoveBehaviour) new ChessPieceMoveBehaviour ();
 			TalkBehaviour = (ITalkBehaviour) new DummyTalkBehaviour ();
 			DisplayBehaviour = (IDisplayBehaviour) new DummyDisplayBehaviour ();
 
@@ -61,6 +61,7 @@ namespace SharpSimulator
 			FirstName = ColorName;
 
 			Skin = ColorName.ToLower () + "_" + PieceType.ToLower ();
+
 		}
 	}
 }
