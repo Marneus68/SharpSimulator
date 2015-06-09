@@ -2,6 +2,12 @@
 
 # SharpSimulator
 
+SharpSimulator is an attempt at making a simulator able to emulate various scenarios involving multiple entities with various behaviours and interactions. The simulations are described by json files and feature nice 2D graphics. The whole project is made in C# and [Gtk#](http://www.mono-project.com/docs/gui/gtksharp/) using [MonoDevelop](http://www.monodevelop.com/).
+
+This project is meant to showcase the use of design patterns in high level programming languages. It implements a [Strategy Pattern](https://en.wikipedia.org/wiki/Strategy_pattern), a [State Machine](https://en.wikipedia.org/wiki/State_pattern), a [Chain Of Responsability](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern ), an [Abstract Factory Pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern) and several others.
+
+You can access this project on github [here](https://github.com/Marneus68/SharpSimulator).
+
 ## Builing
 
 You can build the solution using Xamarin Studio, MonoDevelop or Visual Studio.
@@ -26,12 +32,11 @@ To build the project, you may need to redownload the NUnit NuGet packages
 - NUnit Runner
 - Json.net
 
-Bug linked to using dynamic (c# keyword)
-Make sure you are using .net v4+ (add reference Microsoft.Csharp v4+)
+Make sure you are using .the proper version of .NET.
 
 #### Gtk#
 
-In addition, you will need the Gtk# Library to run the project. The installation method depends on the platform.
+In addition, you will need the [Gtk#](http://www.mono-project.com/docs/gui/gtksharp/) Library to run the project. The installation method depends on the platform.
 
 ##### Windows
 
@@ -83,6 +88,3 @@ Possible Levels of include :
 * ALL
 
 Direct use of System.ConsoleWriteLine and similar methods is **discouraged**.
-
-
-
